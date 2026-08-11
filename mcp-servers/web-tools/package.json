@@ -1,0 +1,14 @@
+{
+  "name": "web-tools-mcp",
+  "version": "1.0.0",
+  "description": "MCP server providing web search (Tavily) and web page content scraping (Firecrawl)",
+  "type": "module",
+  "main": "src/index.mjs",
+  "scripts": {
+    "start": "node src/index.mjs",
+    "dev": "node src/index.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0"
+  }
+}
