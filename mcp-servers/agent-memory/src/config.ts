@@ -1,7 +1,7 @@
 import path from "node:path";
 import fs from "node:fs";
 
-export const DEFAULT_VAULT = "/home/amadeus/Workspace/obsidian";
+export const DEFAULT_VAULT = "/home/amadeus/Projects/workspace/obsidian";
 
 export type LogLevel = "debug" | "info" | "warn" | "error";
 
