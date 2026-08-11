@@ -1,0 +1,15 @@
+{
+  "mcpServers": {
+    "web-tools": {
+      "command": "node",
+      "args": ["/home/amadeus/Workspace/mcp-servers/web-tools/src/index.mjs"]
+    },
+    "agent-memory": {
+      "command": "node",
+      "args": ["/home/amadeus/Workspace/mcp-servers/agent-memory/dist/index.js"],
+      "env": {
+        "OBSIDIAN_VAULT": "/home/amadeus/Workspace/obsidian"
+      }
+    }
+  }
+}
