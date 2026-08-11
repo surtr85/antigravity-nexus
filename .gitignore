@@ -17,3 +17,6 @@ yarn-error.log*
 .tmp-*
 .DS_Store
 Thumbs.db
+
+# Obsidian ephemeral workspace state
+**/.obsidian/workspace*.json
