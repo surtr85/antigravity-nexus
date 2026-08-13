@@ -18,7 +18,6 @@ server.on("connect", (req, clientSocket, head) => {
   console.log(`[CF Proxy] CONNECT request for ${host}:${targetPort}`);
 
   const ws = new WebSocket(WORKER_WS_URL);
-
   let connected = false;
 
   ws.on("open", () => {
