@@ -833,14 +833,7 @@ async def to_device_callback(event):
                     logging.info(f"🔑 SAS Emoji Comparison with {sender}:\n👉 Emojis: {emoji_str}")
                 except Exception:
                     pass
-                # Pre-confirm SAS on bot side so when user clicks 'They match' in Element, verification completes instantly!
-                try:
-                    sas.accept_sas()
-                    msg = sas.get_mac()
-                    await client.to_device(msg)
-                    logging.info(f"✅ Bot MAC pre-sent. Waiting for user to click 'They match' in Element...")
-                except Exception as e:
-                    logging.warning(f"Could not pre-send MAC: {e}")
+                logging.info(f"⏳ Emojis displayed. Waiting for user to click 'They match' in Element...")
 
         # 4. Handle KeyVerificationMac (when user clicks They Match in Element)
         elif isinstance(event, nio.KeyVerificationMac) or event_type == "m.key.verification.mac":
@@ -848,11 +841,29 @@ async def to_device_callback(event):
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
                 try:
+                    other_device_id = getattr(sas.other_olm_device, "id", "")
+                    
+                    # 1. Accept SAS and send our MAC to Element
+                    sas.accept_sas()
+                    mac_msg = sas.get_mac()
+                    await client.to_device(mac_msg)
+                    logging.info(f"📤 Sent m.key.verification.mac to '{sender}' device '{other_device_id}'")
+
+                    # 2. Send MSC2241 m.key.verification.done so Element completes verification instantly without spinning/timing out
+                    done_msg = nio.ToDeviceMessage(
+                        type="m.key.verification.done",
+                        recipient=sender,
+                        recipient_device=other_device_id,
+                        content={"transaction_id": txn_id}
+                    )
+                    await client.to_device(done_msg)
+                    logging.info(f"📤 Sent m.key.verification.done to '{sender}' device '{other_device_id}'")
+                    
                     if hasattr(sas, "other_olm_device") and sas.other_olm_device:
                         client.verify_device(sas.other_olm_device)
                     logging.info(f"🎉 SUCCESS: Device for user '{sender}' is now FULLY VERIFIED (Shield 🛡️ / Green Tick ✅)!")
                 except Exception as e:
-                    logging.error(f"MAC verification failed: {e}")
+                    logging.error(f"MAC verification failed: {e}", exc_info=True)
 
         elif isinstance(event, nio.KeyVerificationCancel) or event_type == "m.key.verification.cancel":
             logging.info(f"Verification canceled by {sender}: {getattr(event, 'reason', '')} (code: {getattr(event, 'code', '')})")
