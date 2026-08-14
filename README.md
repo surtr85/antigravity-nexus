@@ -8,47 +8,47 @@ A production-grade, extensible multi-agent development environment powered by **
 
 ```mermaid
 graph TD
-    User([👤 User / Developer])
+    User(["👤 User / Developer"])
 
-    subgraph Matrix Ecosystem
-        Client[📱 Element / FluffyChat / SchildiChat]
-        Homeserver[🌐 Matrix Homeserver (E2EE / Megolm)]
-        Bridge[⚡ Matrix Antigravity Bridge (Python Daemon)]
+    subgraph "Matrix Ecosystem"
+        Client["📱 Element / FluffyChat / SchildiChat"]
+        Homeserver["🌐 Matrix Homeserver (E2EE / Megolm)"]
+        Bridge["⚡ Matrix Antigravity Bridge (Python Daemon)"]
     end
 
-    subgraph Core Agent Engine
-        AGY[🤖 Google Antigravity CLI (agy)]
-        Config[⚙️ Workspace Config (.agents/)]
+    subgraph "Core Agent Engine"
+        AGY["🤖 Google Antigravity CLI (agy)"]
+        Config["⚙️ Workspace Config (.agents/)"]
     end
 
-    subgraph MCP Tool Servers
-        MemMCP[🧠 agent-memory MCP Server]
-        WebMCP[🌐 web-tools MCP Server]
+    subgraph "MCP Tool Servers"
+        MemMCP["🧠 agent-memory MCP Server"]
+        WebMCP["🌐 web-tools MCP Server"]
     end
 
-    subgraph Storage & External APIs
-        Vault[(📓 Obsidian Vault / Markdown)]
-        SQLite[(⚡ SQLite FTS5 Graph Index)]
-        Tavily[🔍 Tavily Search API]
-        Firecrawl[🕷️ Firecrawl Scraper API]
-        CFWorker[🛡️ Cloudflare Worker Proxy]
+    subgraph "Storage & External APIs"
+        Vault[("📓 Obsidian Vault / Markdown")]
+        SQLite[("⚡ SQLite FTS5 Graph Index")]
+        Tavily["🔍 Tavily Search API"]
+        Firecrawl["🕷️ Firecrawl Scraper API"]
+        CFWorker["🛡️ Cloudflare Worker Proxy"]
     end
 
-    User -->|Chat / Upload Images / Commands| Client
+    User -->|"Chat / Upload Images / Commands"| Client
     Client --> Homeserver
-    Homeserver <-->|E2EE Encrypted Sync| Bridge
-    Bridge -->|Dynamic Prompts & Context| AGY
+    Homeserver <-->|"E2EE Encrypted Sync"| Bridge
+    Bridge -->|"Dynamic Prompts & Context"| AGY
     AGY <--> Config
-    AGY <-->|stdio MCP Protocol| MemMCP
-    AGY <-->|stdio MCP Protocol| WebMCP
+    AGY <-->|"stdio MCP Protocol"| MemMCP
+    AGY <-->|"stdio MCP Protocol"| WebMCP
 
     MemMCP <--> Vault
     MemMCP <--> SQLite
-    WebMCP -->|Optional Proxy| CFWorker
+    WebMCP -->|"Optional Proxy"| CFWorker
     CFWorker --> Tavily
     CFWorker --> Firecrawl
-    WebMCP -.->|Direct Fallback| Tavily
-    WebMCP -.->|Direct Fallback| Firecrawl
+    WebMCP -.->|"Direct Fallback"| Tavily
+    WebMCP -.->|"Direct Fallback"| Firecrawl
 ```
 
 ---
