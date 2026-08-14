@@ -557,8 +557,13 @@ async def handle_command(room_id: str, command: str, args: list) -> str:
             "  └ List active Model Context Protocol (MCP) servers and their available tools.\n\n"
             "💡 *Tip: You can also upload images directly to Matrix chat for visual analysis!*"
         )
-    else:
-        return f"❓ Unknown slash command `{command}`. Type `/help` for available commands."
+# Patch nio.AsyncClient.join to send empty JSON body '{}' so modern Synapse homeservers accept it
+@nio.client.base_client.logged_in_async
+async def patched_client_join(self, room_id: str):
+    method, path = nio.Api.join(self.access_token, room_id)
+    return await self._send(nio.responses.JoinResponse, method, path, data="{}")
+
+nio.AsyncClient.join = patched_client_join
 
 async def on_invite_callback(room, event):
     """Automatically join room when invited by an authorized user."""
@@ -568,8 +573,17 @@ async def on_invite_callback(room, event):
         if not is_user_allowed(sender):
             logging.warning(f"🚫 Rejected invitation from unauthorized user '{sender}' to room: {room.room_id}")
             return
-        logging.info(f"Accepted invitation from authorized user '{sender}' to room: {room.room_id}")
-        await client.join(room.room_id)
+        logging.info(f"📥 Received invitation from authorized user '{sender}' to room: {room.room_id}")
+        res = await client.join(room.room_id)
+        if isinstance(res, nio.responses.JoinError):
+            logging.error(f"❌ Failed to join room {room.room_id}: {res}")
+        else:
+            logging.info(f"✅ Successfully joined room: {room.room_id}")
+            await send_formatted_message(
+                client,
+                room.room_id,
+                "👋 **Antigravity Agent Connected!**\n\nI'm ready to assist you. Type `/help` to view available slash commands or send any message to start."
+            )
 
 async def download_matrix_media(client, event) -> str:
     """Downloads & decrypts Matrix media from homeserver."""
