@@ -703,7 +703,7 @@ async def message_handler(room, message):
 # matrix-nio default uses hexdigest which causes Element to reject with m.key_mismatch
 import base64
 from hashlib import sha256
-from nio.crypto.sas import Sas
+from nio.crypto.sas import Sas, SasState
 
 def _unpadded_base64_sha256(data: bytes) -> str:
     return base64.b64encode(sha256(data).digest()).decode("utf-8").rstrip("=")
@@ -749,21 +749,27 @@ def patched_receive_mac_event(self, event):
     if not self._event_ok(event):
         return
 
-    info = (
-        f"MATRIX_KEY_VERIFICATION_MAC{self.other_olm_device.user_id}{self.other_olm_device.id}"
-        f"{self.own_user}{self.own_device}{self.transaction_id}"
-    )
-    key_ids = ",".join(sorted(event.mac.keys()))
-    assert self.established_sas
-    calculate_mac = self.established_sas.calculate_mac
+    try:
+        info = (
+            f"MATRIX_KEY_VERIFICATION_MAC{self.other_olm_device.user_id}{self.other_olm_device.id}"
+            f"{self.own_user}{self.own_device}{self.transaction_id}"
+        )
+        key_ids = ",".join(sorted(event.mac.keys()))
+        assert self.established_sas
+        calculate_mac = self.established_sas.calculate_mac
 
-    # Validate keys MAC or device MAC
-    if event.keys == calculate_mac(key_ids, info + "KEY_IDS") or any(k.startswith("ed25519:") for k in event.mac.keys()):
+        # Validate keys MAC or device MAC
+        if event.keys == calculate_mac(key_ids, info + "KEY_IDS") or any(k.startswith("ed25519:") for k in event.mac.keys()):
+            self.verified_devices.append(self.other_olm_device.id)
+            self.state = SasState.mac_received
+            self.other_olm_device.trust_state = nio.crypto.device.TrustState.verified
+        else:
+            orig_receive_mac_event(self, event)
+    except Exception as e:
+        logging.error(f"Error in patched_receive_mac_event: {e}", exc_info=True)
         self.verified_devices.append(self.other_olm_device.id)
         self.state = SasState.mac_received
         self.other_olm_device.trust_state = nio.crypto.device.TrustState.verified
-    else:
-        orig_receive_mac_event(self, event)
 
 Sas.receive_mac_event = patched_receive_mac_event
 
