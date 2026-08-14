@@ -1,6 +1,28 @@
-# ⚡️ Antigravity Workspace & AI Agent Ecosystem
+<div align="center">
 
-A production-grade, extensible multi-agent development environment powered by **Google Antigravity (`agy`)**, featuring an **End-to-End Encrypted (E2EE) Matrix chat bridge**, **Obsidian-backed persistent memory**, and **Model Context Protocol (MCP)** search & scraping tools.
+# ⚡️ Antigravity Nexus
+
+### Autonomous AI Agent Workspace & Ecosystem
+**End-to-End Encrypted Matrix Bridge • Obsidian Knowledge Graph Memory • Model Context Protocol (MCP) Tools**
+
+[![Author](https://img.shields.io/badge/Author-Surtr-7928CA?style=for-the-badge&logo=github&logoColor=white)](https://github.com/surtr85)
+[![Node.js](https://img.shields.io/badge/Node.js-22%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Matrix E2EE](https://img.shields.io/badge/Matrix-E2EE%20Megolm-000000?style=for-the-badge&logo=matrix&logoColor=white)](https://matrix.org)
+[![MCP](https://img.shields.io/badge/MCP-1.0-blue?style=for-the-badge)](https://modelcontextprotocol.io)
+[![License](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)](LICENSE)
+
+</div>
+
+---
+
+## 📖 Overview
+
+**Antigravity Nexus** is a production-ready, highly extensible development workspace designed around **Google Antigravity (`agy`)**. It bridges the local AI coding assistant to external platforms and tools:
+
+1. 📱 **Matrix E2EE Chat Bridge**: Securely communicate with and control Antigravity from any Matrix client (Element, FluffyChat, Cinny) with on-the-fly multimodal image decryption, real-time typing indicators, and slash commands.
+2. 🧠 **Agent Memory MCP Server**: Persistent long-term memory where **Obsidian Markdown** notes serve as the human-readable source of truth, accelerated by an embedded **SQLite FTS5 full-text & graph search index**.
+3. 🌐 **Web Tools MCP Server**: Real-time web intelligence using **Tavily Search** and **Firecrawl Scraper**, with an included **Cloudflare Worker reverse proxy** for restricted network environments.
 
 ---
 
@@ -56,7 +78,7 @@ graph TD
 ## 📁 Repository Structure
 
 ```
-workspace/
+antigravity-nexus/
 ├── README.md                      # Master repository documentation (this file)
 ├── .gitignore                     # Global rules (ignores .env, keys, DBs, venvs)
 ├── .agents/
@@ -80,6 +102,7 @@ workspace/
 │   │   ├── dist/                  # Compiled JavaScript bundle
 │   │   └── obsidian/              # Obsidian Markdown Knowledge Graph Vault
 │   │       ├── .obsidian/         # Obsidian appearance & plugin configs
+│   │       ├── .agent-memory/     # Auto-generated local SQLite FTS5 index (ignored)
 │   │       └── Agent Memory/      # Structured memory categories
 │   │           ├── Decisions/     # Architectural decisions
 │   │           ├── Experiences/   # Interaction logs & trials
@@ -102,9 +125,9 @@ workspace/
 
 ---
 
-## 📚 Documentation Index
+## 📚 Dedicated Documentation Index
 
-For in-depth setup, CLI commands, and architecture details for each module, explore their dedicated guides:
+For in-depth configuration, CLI commands, and architecture details for each module, explore their dedicated guides:
 
 | Module | Dedicated Guide | Description |
 | :--- | :--- | :--- |
@@ -177,8 +200,8 @@ Equips Antigravity with real-time web awareness and scraping capabilities:
 
 ### Step 1: Clone the Repository
 ```bash
-git clone ssh://git@git.surtr.ir:2222/amadeus/workspace.git
-cd workspace
+git clone https://github.com/surtr85/antigravity-nexus.git
+cd antigravity-nexus
 ```
 
 ### Step 2: Install Node.js MCP Dependencies
@@ -215,7 +238,7 @@ nano .env   # Enter your Matrix Homeserver, Username, and Password
 MATRIX_HOMESERVER=https://matrix.example.com
 MATRIX_USERNAME=your_bot_username
 MATRIX_PASSWORD=your_bot_password
-# DEFAULT_WORKSPACE=/path/to/workspace
+# DEFAULT_WORKSPACE=/path/to/antigravity-nexus
 # AGY_BIN=/path/to/agy
 ```
 
@@ -254,6 +277,12 @@ To proxy `web-tools` API calls through Cloudflare Workers:
 
 ---
 
+## 👤 Author & Maintainer
+
+Created & maintained by **[Surtr](https://github.com/surtr85)**.
+
+---
+
 ## 📄 License
 
-MIT License. Feel free to use, modify, and distribute this workspace for your own agentic workflows.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
