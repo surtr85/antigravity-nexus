@@ -752,23 +752,31 @@ async def to_device_callback(event):
             txn_id = getattr(event, "transaction_id", "")
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
+                
+                # Send our public key to complete the key exchange
+                msg = sas.share_key()
+                await client.to_device(msg)
+                
                 try:
                     emojis = sas.get_emoji()
                     emoji_str = "  ".join([f"{e[0]} {e[1]}" for e in emojis])
                     logging.info(f"🔑 SAS Emoji Comparison with {sender}:\n👉 Emojis: {emoji_str}")
                 except Exception:
                     pass
-                logging.info(f"✅ Auto-confirming SAS verification for '{sender}'...")
-                msg = client.confirm_key_verification(txn_id)
-                await client.to_device(msg)
+                logging.info(f"⏳ Waiting for '{sender}' to click 'They match' in Element...")
 
-        # 4. Handle KeyVerificationMac (when verification is confirmed)
+        # 4. Handle KeyVerificationMac (when user clicks They Match and sends MAC)
         elif isinstance(event, nio.KeyVerificationMac) or event_type == "m.key.verification.mac":
             txn_id = getattr(event, "transaction_id", "")
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
                 try:
                     sas.verify_mac(event)
+                    
+                    # Send our MAC back to confirm
+                    msg = client.confirm_key_verification(txn_id)
+                    await client.to_device(msg)
+                    
                     if hasattr(sas, "other_olm_device") and sas.other_olm_device:
                         client.verify_device(sas.other_olm_device)
                     logging.info(f"🎉 SUCCESS: Device for user '{sender}' is now FULLY VERIFIED (Shield 🛡️ / Green Tick ✅)!")
