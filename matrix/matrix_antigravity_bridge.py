@@ -711,12 +711,35 @@ async def to_device_callback(event):
             logging.warning(f"🚫 Rejected key verification request from unauthorized user: '{sender}'")
             return
 
-        if isinstance(event, nio.KeyVerificationStart):
-            if "m.sas.v1" not in getattr(event, "methods", []):
-                logging.warning(f"Unsupported verification method: {getattr(event, 'methods', None)}")
-                return
+        # 1. Handle MSC2241 Interactive Verification Request (from Element / new devices)
+        event_type = getattr(event, "type", "")
+        if event_type == "m.key.verification.request" or (isinstance(event, nio.UnknownToDeviceEvent) and getattr(event, "type", "") == "m.key.verification.request"):
+            content = getattr(event, "source", {}).get("content", {})
+            from_device = content.get("from_device")
+            txn_id = content.get("transaction_id")
+            methods = content.get("methods", [])
+            logging.info(f"🔑 Received Interactive Verification Request from '{sender}' device '{from_device}' (txn: {txn_id}, methods: {methods})")
+            
+            # Send m.key.verification.ready back to the requesting device
+            ready_content = {
+                "from_device": client.device_id,
+                "methods": ["m.sas.v1"],
+                "transaction_id": txn_id
+            }
+            ready_msg = nio.ToDeviceMessage(
+                type="m.key.verification.ready",
+                recipient=sender,
+                recipient_device=from_device,
+                content=ready_content
+            )
+            await client.to_device(ready_msg)
+            logging.info(f"✅ Sent m.key.verification.ready to '{sender}' device '{from_device}'!")
+            return
+
+        # 2. Handle KeyVerificationStart (when initiator sends start with m.sas.v1)
+        if isinstance(event, nio.KeyVerificationStart) or event_type == "m.key.verification.start":
             txn_id = getattr(event, "transaction_id", "")
-            logging.info(f"🔑 Received SAS Verification request from '{sender}' (txn: {txn_id})")
+            logging.info(f"🔑 Received SAS Verification Start from '{sender}' (txn: {txn_id})")
             if txn_id in client.key_verifications:
                 res = await client.accept_key_verification(txn_id)
                 if isinstance(res, nio.ToDeviceError):
@@ -724,7 +747,8 @@ async def to_device_callback(event):
                 else:
                     logging.info(f"✅ Accepted SAS Verification with '{sender}'!")
 
-        elif isinstance(event, nio.KeyVerificationKey):
+        # 3. Handle KeyVerificationKey (when initiator sends public key)
+        elif isinstance(event, nio.KeyVerificationKey) or event_type == "m.key.verification.key":
             txn_id = getattr(event, "transaction_id", "")
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
@@ -738,7 +762,8 @@ async def to_device_callback(event):
                 msg = client.confirm_key_verification(txn_id)
                 await client.to_device(msg)
 
-        elif isinstance(event, nio.KeyVerificationMac):
+        # 4. Handle KeyVerificationMac (when verification is confirmed)
+        elif isinstance(event, nio.KeyVerificationMac) or event_type == "m.key.verification.mac":
             txn_id = getattr(event, "transaction_id", "")
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
@@ -750,7 +775,7 @@ async def to_device_callback(event):
                 except Exception as e:
                     logging.error(f"MAC verification failed: {e}")
 
-        elif isinstance(event, nio.KeyVerificationCancel):
+        elif isinstance(event, nio.KeyVerificationCancel) or event_type == "m.key.verification.cancel":
             logging.info(f"Verification canceled by {sender}: {getattr(event, 'reason', '')} (code: {getattr(event, 'code', '')})")
 
     except Exception as e:
@@ -766,12 +791,7 @@ async def custom_setup_callbacks(self):
         client._sas_callback_registered = True
         client.add_to_device_callback(
             to_device_callback,
-            (
-                nio.KeyVerificationStart,
-                nio.KeyVerificationKey,
-                nio.KeyVerificationMac,
-                nio.KeyVerificationCancel
-            )
+            nio.ToDeviceEvent
         )
         logging.info("🔐 SAS Emoji Verification & Device Trust callbacks registered.")
         
