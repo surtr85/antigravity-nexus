@@ -1,18 +1,21 @@
 # ⚡️ Antigravity Matrix Bridge
 
-A lightweight, feature-rich bridge that connects **Google Antigravity (`agy`)** directly to a **Matrix homeserver**, allowing you to chat, execute code, run slash commands, and analyze multimodal images directly from any Matrix client (Element, FluffyChat, SchildiChat, etc.).
+A lightweight, enterprise-grade, end-to-end encrypted bridge that connects **Google Antigravity (`agy`)** directly to a **Matrix homeserver**, allowing you to chat, execute code, run slash commands, and analyze multimodal images directly from any Matrix client (Element, FluffyChat, Cinny, SchildiChat, etc.).
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
 - 🔐 **End-to-End Encryption (E2EE)**: Full support for encrypted Matrix rooms via `vodozemac` / Megolm ratchets.
+- 🛡️ **Automated Cross-Signing Self-Verification (SSSS)**: Automatically decrypts the account's Self-Signing Key (SSK) using `MATRIX_RECOVERY_KEY` and signs the bot session for a permanent **Green Shield (Verified 🛡️)** status.
+- 🤝 **Interactive SAS Emoji Verification**: MSC2241 & MSC2366 compliant interactive device-to-device verification with emoji matching.
+- 🔒 **Access Control Allowlist (`MATRIX_ALLOWED_USERS`)**: Restricts invitations, slash commands, message processing, image attachments, and verification requests exclusively to authorized Matrix accounts.
 - 🖼️ **Multimodal Vision**: Upload screenshots or images directly in Matrix chat (encrypted or unencrypted); the bridge decrypts and feeds them to Antigravity.
-- 💬 **Live Typing Indicators & Status Reactions**: Real-time `typing...` indicators and `⚙️` / `✅` message reaction status.
+- 💬 **Live Typing Indicators & Status Reactions**: Real-time `typing...` indicators and `⚙️` (processing) / `✅` (completed) reactions.
 - 🎨 **Rich Formatting**: Beautiful HTML Markdown tables, syntax-highlighted code blocks, and formatted lists.
 - 🧠 **Dynamic Directory & Memory Preservation**: Switch workspace directories with `/dir` while maintaining 100% of your ongoing conversation history and memory.
+- 🚪 **Synapse v3 Auto-Join & Greetings**: Automatic room invitation acceptance with introductory command greeting.
 - 🔒 **Zero Hardcoded Secrets**: Fully configurable via standard `.env` environment variables.
-- ⚡️ **Native Slash Commands**: Full suite of room control commands.
 
 ---
 
@@ -36,7 +39,7 @@ A lightweight, feature-rich bridge that connects **Google Antigravity (`agy`)** 
 ## 🚀 Quick Setup
 
 ### Prerequisites
-1. **Python 3.10+**
+1. **Python 3.10+** (Tested on Python 3.10 – 3.14)
 2. **Google Antigravity** installed and authenticated (`agy` CLI in PATH or `~/.local/bin/agy`).
 
 ### 1. Configuration
@@ -46,11 +49,21 @@ cp .env.example .env
 nano .env
 ```
 
-Configure:
+Example `.env` configuration:
 ```env
-MATRIX_HOMESERVER=https://matrix.example.com
-MATRIX_USERNAME=your_bot_username
-MATRIX_PASSWORD=your_bot_password
+# Matrix Homeserver & Bot Credentials
+MATRIX_HOMESERVER=https://matrix.surtr.ir
+MATRIX_USERNAME=antigravity
+MATRIX_PASSWORD=your_secure_password
+
+# Access Control: Comma-separated list of authorized Matrix User IDs
+MATRIX_ALLOWED_USERS=@amadeus:matrix.surtr.ir
+
+# Matrix Recovery Key for E2EE Key Backup & Secure Secret Storage (SSSS)
+MATRIX_RECOVERY_KEY="EsTc jETz kP1Y 5Xcm NDs3 Gvp3 HkgQ SHz7 FPLJ x5D7 5z6S mv6y"
+
+# Optional: Path to custom agy binary
+AGY_BIN=/home/amadeus/.local/bin/agy
 ```
 
 ### 2. 1-Click Automated Installation
@@ -64,7 +77,7 @@ The script will automatically create the `matrix-env` virtual environment, insta
 
 ## 🛠️ Manual Setup
 
-If you prefer to configure manually:
+If you prefer to configure manually without `setup.sh`:
 
 ```bash
 # 1. Create virtual environment
@@ -84,7 +97,7 @@ chmod +x run_bridge.sh
 
 ## ⚙️ Background Daemon (systemd)
 
-To ensure the bot is always online and starts on boot:
+To ensure the bridge runs continuously and starts on boot:
 
 ```bash
 # 1. Create systemd unit file

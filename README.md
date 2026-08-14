@@ -238,8 +238,14 @@ nano .env   # Enter your Matrix Homeserver, Username, and Password
 MATRIX_HOMESERVER=https://matrix.example.com
 MATRIX_USERNAME=your_bot_username
 MATRIX_PASSWORD=your_bot_password
-# Access control: only users in this list can invite and chat with the bot
+
+# Access Control: Only users in this allowlist can interact with or invite the bot
 MATRIX_ALLOWED_USERS=@your_username:matrix.example.com
+
+# Matrix Recovery Key for E2EE Key Backup & Automated Cross-Signing Self-Verification (SSSS)
+MATRIX_RECOVERY_KEY="EsTc jETz kP1Y 5Xcm NDs3 Gvp3 HkgQ SHz7 FPLJ x5D7 5z6S mv6y"
+
+# Optional overrides:
 # DEFAULT_WORKSPACE=/path/to/antigravity-nexus
 # AGY_BIN=/path/to/agy
 ```
