@@ -1,6 +1,6 @@
 import path from "node:path";
 import fs from "node:fs";
-export const DEFAULT_VAULT = "/home/amadeus/Projects/workspace/obsidian";
+export const DEFAULT_VAULT = process.env.OBSIDIAN_VAULT || path.resolve(process.cwd(), "obsidian");
 function envStr(name, fallback) {
     const v = process.env[name];
     return v !== undefined && v.trim() !== "" ? v.trim() : fallback;

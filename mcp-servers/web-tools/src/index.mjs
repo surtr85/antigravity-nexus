@@ -3,13 +3,21 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { CallToolRequestSchema, ListToolsRequestSchema } from "@modelcontextprotocol/sdk/types.js";
 import https from "node:https";
 import dns from "node:dns";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { Resolver } from "node:dns/promises";
+import dotenv from "dotenv";
 
-const PROXY_URL = process.env.PROXY_URL || "https://search.surtr.ir";
-const TAVILY_API_KEY = process.env.TAVILY_API_KEY || "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";
-const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY || "fc-deb0899c43da4021b891848cd6fdd372";
+// Load .env from web-tools directory or process root
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+dotenv.config({ path: path.resolve(__dirname, "../.env") });
+dotenv.config();
 
-// Configure public DNS resolver (1.1.1.1 / 1.0.0.1 / 8.8.8.8) to bypass local DNS rewrites (e.g. AdGuard)
+const PROXY_URL = process.env.PROXY_URL || "";
+const TAVILY_API_KEY = process.env.TAVILY_API_KEY || "";
+const FIRECRAWL_API_KEY = process.env.FIRECRAWL_API_KEY || "";
+
+// Configure public DNS resolver (1.1.1.1 / 1.0.0.1 / 8.8.8.8) to bypass local DNS rewrites
 const publicResolver = new Resolver();
 publicResolver.setServers(["1.1.1.1", "1.0.0.1", "8.8.8.8"]);
 
@@ -103,7 +111,7 @@ async function makeApiCall(targetUrl, headers, body) {
 }
 
 const server = new Server(
-  { name: "web-tools-server", version: "1.1.0" },
+  { name: "web-tools-server", version: "1.2.0" },
   { capabilities: { tools: {} } }
 );
 
@@ -161,6 +169,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   // 1. Tavily Search
   if (name === "tavily_search") {
+    if (!TAVILY_API_KEY) {
+      return {
+        isError: true,
+        content: [{ type: "text", text: "Error: TAVILY_API_KEY is not configured. Please add TAVILY_API_KEY to your .env file." }],
+      };
+    }
+
     try {
       const query = typeof safeArgs.query === "string" ? safeArgs.query.trim() : "";
       if (!query) {
@@ -209,6 +224,13 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
   // 2. Firecrawl Scrape
   if (name === "firecrawl_scrape") {
+    if (!FIRECRAWL_API_KEY) {
+      return {
+        isError: true,
+        content: [{ type: "text", text: "Error: FIRECRAWL_API_KEY is not configured. Please add FIRECRAWL_API_KEY to your .env file." }],
+      };
+    }
+
     try {
       const url = typeof safeArgs.url === "string" ? safeArgs.url.trim() : "";
       if (!url) {

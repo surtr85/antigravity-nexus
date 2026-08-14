@@ -63,28 +63,15 @@ Modules (`agent-memory/src/`):
 Requires Node.js `>= 22.13` (bundles `node:sqlite` with FTS5).
 
 ```bash
-cd /home/amadeus/Workspace/mcp-servers/agent-memory
+cd mcp-servers/agent-memory
 npm install
-npm run memory:build      # tsc -> dist/
-```
-
-From the repository root the scripts are:
-
-```bash
-npm run memory:dev        # tsx src/index.ts       (dev)
-npm run memory:build      # tsc -p agent-memory/tsconfig.json
-npm run memory            # node agent-memory/dist/index.js   (start over stdio)
-npm run memory:test       # vitest run
-npm run memory:reindex    # rebuild SQLite from vault
-npm run memory:stats      # JSON stats (types, projects, top tags, freshness)
-npm run memory:doctor     # vault/db/index integrity checks (supports --fix)
-npm run memory:search -- "my query" # search memories directly from terminal
+npm run build      # tsc -> dist/
 ```
 
 ### The vault it manages
 
 ```
-/home/amadeus/Workspace/obsidian/
+obsidian/
 └── Agent Memory/
     ├── Facts/        Preferences/   Decisions/    Experiences/
     ├── Lessons/      Patterns/      Skills/       Problems/
@@ -100,7 +87,7 @@ on first start.
 
 | Env var | Default | Notes |
 |---|---|---|
-| `OBSIDIAN_VAULT` | `/home/amadeus/Workspace/obsidian` | Vault root (must exist) |
+| `OBSIDIAN_VAULT` | `./obsidian` | Vault root (must exist) |
 | `MEMORY_DB` | `$OBSIDIAN_VAULT/.agent-memory/index.db` | Index only; deletable freely |
 | `MEMORY_LOG_LEVEL` | `info` | `debug`/`info`/`warn`/`error`, written to stderr |
 | `MEMORY_EMBEDDINGS` | `disabled` | Reserved; no embedding backend yet |

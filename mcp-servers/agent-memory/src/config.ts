@@ -1,7 +1,7 @@
 import path from "node:path";
 import fs from "node:fs";
 
-export const DEFAULT_VAULT = "/home/amadeus/Projects/workspace/obsidian";
+export const DEFAULT_VAULT = process.env.OBSIDIAN_VAULT || path.resolve(process.cwd(), "obsidian");
 
 export type LogLevel = "debug" | "info" | "warn" | "error";
 
