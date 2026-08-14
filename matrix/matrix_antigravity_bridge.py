@@ -6,6 +6,10 @@ import glob
 import shutil
 import asyncio
 import logging
+import base64
+import hmac
+import hashlib
+import aiohttp
 import httpx
 import markdown
 import nio
@@ -84,6 +88,114 @@ if not HOMESERVER or not USERNAME or not PASSWORD:
     logging.error("❌ Missing Matrix credentials! Please configure MATRIX_HOMESERVER, MATRIX_USERNAME, and MATRIX_PASSWORD in your .env file.")
     sys.exit(1)
 
+async def auto_cross_sign_self(client, recovery_key_str: str):
+    """Automatically decrypts SSK using the Recovery Key and signs the device so it is permanently verified with Green Shield."""
+    try:
+        user_id = client.user_id
+        device_id = client.device_id
+        token = client.access_token
+        homeserver = client.homeserver
+
+        ALPHABET = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+        clean_key = recovery_key_str.replace(" ", "").strip('"').strip("'")
+        num = 0
+        for char in clean_key:
+            num = num * 58 + ALPHABET.index(char)
+        combined = num.to_bytes((num.bit_length() + 7) // 8, "big")
+        nPad = len(clean_key) - len(clean_key.lstrip("1"))
+        raw = b"\x00" * nPad + combined
+        key_bytes = raw[2:34]
+
+        headers = {"Authorization": f"Bearer {token}"}
+        async with aiohttp.ClientSession() as session:
+            # 1. Fetch encrypted self-signing key from account data
+            acc_url = f"{homeserver}/_matrix/client/v3/user/{user_id}/account_data/m.cross_signing.self_signing"
+            async with session.get(acc_url, headers=headers) as r:
+                if r.status != 200:
+                    logging.info("ℹ️ No Cross-Signing Self-Signing key found on account data.")
+                    return
+                self_signing_content = await r.json()
+
+            enc_dict = list(self_signing_content.get("encrypted", {}).values())[0]
+            
+            # 2. Decrypt SSK using HKDF derived key
+            from cryptography.hazmat.primitives.kdf.hkdf import HKDF
+            from cryptography.hazmat.primitives import hashes
+            from cryptography.hazmat.primitives.ciphers import Cipher, algorithms, modes
+            from cryptography.hazmat.primitives.asymmetric import ed25519
+
+            hkdf = HKDF(algorithm=hashes.SHA256(), length=64, salt=b"", info=b"m.cross_signing.self_signing")
+            derived = hkdf.derive(key_bytes)
+            aes_key, mac_key = derived[:32], derived[32:]
+
+            iv = base64.b64decode(enc_dict["iv"])
+            ct = base64.b64decode(enc_dict["ciphertext"])
+            mac = base64.b64decode(enc_dict["mac"])
+
+            if hmac.new(mac_key, ct, hashlib.sha256).digest() != mac:
+                logging.warning("⚠️ SSSS MAC check failed for m.cross_signing.self_signing with current MATRIX_RECOVERY_KEY.")
+                return
+
+            cipher = Cipher(algorithms.AES(aes_key), modes.CTR(iv))
+            dec = cipher.decryptor()
+            ssk_b64 = (dec.update(ct) + dec.finalize()).decode("utf-8")
+            
+            # 3. Create SSK signer
+            ssk_seed = base64.b64decode(ssk_b64 + "==" if len(ssk_b64) % 4 != 0 else ssk_b64)
+            ssk_priv = ed25519.Ed25519PrivateKey.from_private_bytes(ssk_seed)
+            ssk_pub_b64 = base64.b64encode(ssk_priv.public_key().public_bytes_raw()).decode("utf-8").rstrip("=")
+
+            # 4. Query current device keys
+            query_url = f"{homeserver}/_matrix/client/v3/keys/query"
+            async with session.post(query_url, headers=headers, json={"device_keys": {user_id: [device_id]}}) as r:
+                res = await r.json()
+                dev_obj = res.get("device_keys", {}).get(user_id, {}).get(device_id, {})
+
+            if not dev_obj:
+                logging.warning(f"⚠️ Could not fetch device keys for device '{device_id}' to cross-sign.")
+                return
+
+            signatures = dev_obj.get("signatures", {}).get(user_id, {})
+            ssk_sig_key = f"ed25519:{ssk_pub_b64}"
+
+            if ssk_sig_key in signatures:
+                logging.info(f"🛡️ Device '{device_id}' is ALREADY VERIFIED with Self-Signing Key (Green Shield ✅)!")
+                return
+
+            # 5. Sign our device object with SSK
+            obj_to_sign = {
+                "user_id": dev_obj["user_id"],
+                "device_id": dev_obj["device_id"],
+                "algorithms": dev_obj["algorithms"],
+                "keys": dev_obj["keys"]
+            }
+            canonical_bytes = nio.Api.to_canonical_json(obj_to_sign).encode("utf-8")
+            sig = ssk_priv.sign(canonical_bytes)
+            sig_b64 = base64.b64encode(sig).decode("utf-8").rstrip("=")
+            signatures[ssk_sig_key] = sig_b64
+
+            upload_payload = {
+                user_id: {
+                    device_id: {
+                        **obj_to_sign,
+                        "signatures": {
+                            user_id: signatures
+                        }
+                    }
+                }
+            }
+
+            # 6. Upload signatures to homeserver
+            sig_url = f"{homeserver}/_matrix/client/v3/keys/signatures/upload"
+            async with session.post(sig_url, headers=headers, json=upload_payload) as r:
+                if r.status == 200:
+                    logging.info(f"🎉 Cross-Signing Auto-Verification SUCCESS: Device '{device_id}' is now officially verified on the homeserver with Green Shield 🛡️!")
+                else:
+                    logging.error(f"Failed to upload device signatures: {await r.text()}")
+
+    except Exception as e:
+        logging.error(f"Error during automatic cross-signing self-verification: {e}", exc_info=True)
+
 # Monkey-patch botlib.Api.login to initialize full Olm E2EE machine & upload device keys
 orig_login = botlib.Api.login
 
@@ -128,6 +240,10 @@ async def custom_login(self):
     if self.async_client.should_upload_keys:
         await self.async_client.keys_upload()
         logging.info("🔐 Successfully published E2EE Olm device keys to Matrix homeserver!")
+
+    # If Recovery Key is configured, automatically decrypt Cross-Signing SSK and sign ourselves!
+    if RECOVERY_KEY:
+        await auto_cross_sign_self(self.async_client, RECOVERY_KEY)
 
 botlib.Api.login = custom_login
 
