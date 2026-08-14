@@ -29,6 +29,7 @@ logging.basicConfig(
 HOMESERVER = os.environ.get("MATRIX_HOMESERVER", "")
 USERNAME = os.environ.get("MATRIX_USERNAME", "")
 PASSWORD = os.environ.get("MATRIX_PASSWORD", "")
+RECOVERY_KEY = os.environ.get("MATRIX_RECOVERY_KEY", "").strip()
 
 # Access Control: Authorized Matrix User IDs (comma-separated, e.g. @amadeus:matrix.surtr.ir)
 ALLOWED_USERS_RAW = os.environ.get("MATRIX_ALLOWED_USERS", "")
@@ -650,6 +651,87 @@ async def message_handler(room, message):
         event_id=getattr(message, "event_id", None),
         attached_image=attached_img
     )
+
+async def to_device_callback(event):
+    """Handles SAS Emoji and Cross-Signing Key Verification from authorized users."""
+    client = bot.api.async_client
+    sender = getattr(event, "sender", None)
+    
+    # Reject verification attempts from unauthorized users
+    if not is_user_allowed(sender):
+        logging.warning(f"🚫 Rejected key verification request from unauthorized user: '{sender}'")
+        if hasattr(event, "transaction_id"):
+            await client.cancel_key_verification(event.transaction_id, reject=True)
+        return
+
+    if isinstance(event, nio.KeyVerificationStart):
+        if "m.sas.v1" not in event.methods:
+            logging.warning(f"Unsupported verification method: {event.methods}")
+            return
+        logging.info(f"🔑 Initiated SAS Key Verification with authorized user '{sender}' (txn: {event.transaction_id})")
+        res = await client.accept_key_verification(event.transaction_id)
+        if isinstance(res, nio.ToDeviceError):
+            logging.error(f"Failed to accept key verification: {res}")
+            return
+        sas = client.key_verifications.get(event.transaction_id)
+        if sas:
+            await client.to_device(sas.share_key())
+
+    elif isinstance(event, nio.KeyVerificationKey):
+        sas = client.key_verifications.get(event.transaction_id)
+        if not sas:
+            return
+        emojis = sas.get_emoji()
+        emoji_str = "  ".join([f"{e[0]} {e[1]}" for e in emojis])
+        logging.info(f"🔑 SAS Emoji Verification with {sender}:\n👉 Emojis: {emoji_str}")
+        logging.info("✅ Auto-confirming SAS verification for authorized user...")
+        await client.confirm_key_verification(event.transaction_id)
+        await client.to_device(sas.get_mac())
+
+    elif isinstance(event, nio.KeyVerificationMac):
+        sas = client.key_verifications.get(event.transaction_id)
+        if not sas:
+            return
+        try:
+            sas.verify_mac(event)
+            logging.info(f"🎉 SUCCESS: Device for user '{sender}' is now FULLY VERIFIED (Shield 🛡️ / Green Tick ✅)!")
+        except Exception as e:
+            logging.error(f"MAC verification failed: {e}")
+
+    elif isinstance(event, nio.KeyVerificationCancel):
+        logging.info(f"Verification canceled by {sender}: {event.reason} (code: {event.code})")
+
+# Register SAS to-device callbacks on connection setup
+orig_setup_callbacks = botlib.Callbacks.setup_callbacks
+
+async def custom_setup_callbacks(self):
+    await orig_setup_callbacks(self)
+    client = self.async_client
+    if not getattr(client, "_sas_callback_registered", False):
+        client._sas_callback_registered = True
+        client.add_to_device_callback(
+            to_device_callback,
+            (
+                nio.KeyVerificationStart,
+                nio.KeyVerificationKey,
+                nio.KeyVerificationMac,
+                nio.KeyVerificationCancel
+            )
+        )
+        logging.info("🔐 SAS Emoji Verification & Device Trust callbacks registered.")
+        
+        # Check for recovery key / key backup
+        if RECOVERY_KEY:
+            logging.info("🔐 Matrix Recovery Key loaded for Secure Secret Storage (SSSS).")
+            key_file = os.path.join(STORE_DIR, "megolm_keys.txt")
+            if os.path.isfile(key_file):
+                try:
+                    await client.import_keys(key_file, RECOVERY_KEY)
+                    logging.info("✅ Successfully imported Megolm room keys using Recovery Key.")
+                except Exception as e:
+                    logging.warning(f"Could not import key file with recovery key: {e}")
+
+botlib.Callbacks.setup_callbacks = custom_setup_callbacks
 
 def main():
     logging.info(f"Starting Matrix-to-Antigravity bridge for user '@{USERNAME}' on {HOMESERVER} (E2EE Enabled)...")
