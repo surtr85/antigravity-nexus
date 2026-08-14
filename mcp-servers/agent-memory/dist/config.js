@@ -1,6 +1,10 @@
 import path from "node:path";
 import fs from "node:fs";
-export const DEFAULT_VAULT = process.env.OBSIDIAN_VAULT || path.resolve(process.cwd(), "obsidian");
+import { fileURLToPath } from "node:url";
+// Get __dirname in ES modules
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+// Default vault path inside agent-memory directory: ./obsidian
+export const DEFAULT_VAULT = process.env.OBSIDIAN_VAULT || path.resolve(__dirname, "../obsidian");
 function envStr(name, fallback) {
     const v = process.env[name];
     return v !== undefined && v.trim() !== "" ? v.trim() : fallback;
@@ -43,7 +47,8 @@ class Logger {
 export const logger = new Logger();
 export function ensureVaultExists(config) {
     if (!fs.existsSync(config.vaultPath)) {
-        throw new Error(`Vault not found: ${config.vaultPath}`);
+        // If vault directory does not exist, initialize it automatically
+        fs.mkdirSync(config.vaultPath, { recursive: true });
     }
     const stat = fs.statSync(config.vaultPath);
     if (!stat.isDirectory()) {

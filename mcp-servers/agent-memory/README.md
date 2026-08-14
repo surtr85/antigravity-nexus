@@ -71,7 +71,7 @@ npm run build      # tsc -> dist/
 ### The vault it manages
 
 ```
-obsidian/
+mcp-servers/agent-memory/obsidian/
 └── Agent Memory/
     ├── Facts/        Preferences/   Decisions/    Experiences/
     ├── Lessons/      Patterns/      Skills/       Problems/

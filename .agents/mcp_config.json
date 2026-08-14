@@ -8,7 +8,7 @@
       "command": "node",
       "args": ["mcp-servers/agent-memory/dist/index.js"],
       "env": {
-        "OBSIDIAN_VAULT": "obsidian"
+        "OBSIDIAN_VAULT": "mcp-servers/agent-memory/obsidian"
       }
     }
   }

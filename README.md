@@ -77,26 +77,26 @@ workspace/
 │   │   ├── package.json           # Node.js dependencies
 │   │   ├── tsconfig.json          # TypeScript build configuration
 │   │   ├── src/                   # TypeScript source code (FTS5, Graph, Tools)
-│   │   └── dist/                  # Compiled JavaScript bundle
+│   │   ├── dist/                  # Compiled JavaScript bundle
+│   │   └── obsidian/              # Obsidian Markdown Knowledge Graph Vault
+│   │       ├── .obsidian/         # Obsidian appearance & plugin configs
+│   │       └── Agent Memory/      # Structured memory categories
+│   │           ├── Decisions/     # Architectural decisions
+│   │           ├── Experiences/   # Interaction logs & trials
+│   │           ├── Facts/         # Verified user & system facts
+│   │           ├── Lessons/       # Extracted learnings
+│   │           ├── Patterns/      # Recurring development patterns
+│   │           ├── Preferences/   # User preferences & personas
+│   │           ├── Problems/      # Solved bugs & failure analyses
+│   │           ├── Projects/      # Project tracking & layouts
+│   │           ├── Sessions/      # Chat transcripts & milestones
+│   │           └── Skills/        # Verified execution guides
 │   └── web-tools/                 # Real-time search & scraping MCP server
 │       ├── README.md              # web-tools documentation
 │       ├── worker.js              # Cloudflare Worker proxy script
 │       ├── package.json           # Node.js dependencies
 │       ├── src/index.mjs          # Server source code (Tavily & Firecrawl)
 │       └── .env.example           # Template API keys
-├── obsidian/                      # Obsidian Markdown Knowledge Graph Vault
-│   ├── .obsidian/                 # Obsidian appearance & plugin configs
-│   └── Agent Memory/              # Structured memory categories
-│       ├── Decisions/             # Architectural decisions
-│       ├── Experiences/           # Interaction logs & trials
-│       ├── Facts/                 # Verified user & system facts
-│       ├── Lessons/               # Extracted learnings
-│       ├── Patterns/              # Recurring development patterns
-│       ├── Preferences/           # User preferences & personas
-│       ├── Problems/              # Solved bugs & failure analyses
-│       ├── Projects/              # Project tracking & layouts
-│       ├── Sessions/              # Chat transcripts & milestones
-│       └── Skills/                # Verified execution guides
 └── tools/                         # User & workspace automation utilities
 ```
 
