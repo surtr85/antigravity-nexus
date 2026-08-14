@@ -701,52 +701,60 @@ async def message_handler(room, message):
 
 async def to_device_callback(event):
     """Handles SAS Emoji and Cross-Signing Key Verification from authorized users."""
-    client = bot.api.async_client
-    sender = getattr(event, "sender", None)
-    
-    # Reject verification attempts from unauthorized users
-    if not is_user_allowed(sender):
-        logging.warning(f"🚫 Rejected key verification request from unauthorized user: '{sender}'")
-        if hasattr(event, "transaction_id"):
-            await client.cancel_key_verification(event.transaction_id, reject=True)
-        return
-
-    if isinstance(event, nio.KeyVerificationStart):
-        if "m.sas.v1" not in event.methods:
-            logging.warning(f"Unsupported verification method: {event.methods}")
+    try:
+        client = bot.api.async_client
+        sender = getattr(event, "sender", None)
+        
+        # Self account and allowed users are authorized
+        is_self = sender and (sender == client.user_id or sender.startswith(f"@{USERNAME}:"))
+        if not is_self and not is_user_allowed(sender):
+            logging.warning(f"🚫 Rejected key verification request from unauthorized user: '{sender}'")
             return
-        logging.info(f"🔑 Initiated SAS Key Verification with authorized user '{sender}' (txn: {event.transaction_id})")
-        res = await client.accept_key_verification(event.transaction_id)
-        if isinstance(res, nio.ToDeviceError):
-            logging.error(f"Failed to accept key verification: {res}")
-            return
-        sas = client.key_verifications.get(event.transaction_id)
-        if sas:
-            await client.to_device(sas.share_key())
 
-    elif isinstance(event, nio.KeyVerificationKey):
-        sas = client.key_verifications.get(event.transaction_id)
-        if not sas:
-            return
-        emojis = sas.get_emoji()
-        emoji_str = "  ".join([f"{e[0]} {e[1]}" for e in emojis])
-        logging.info(f"🔑 SAS Emoji Verification with {sender}:\n👉 Emojis: {emoji_str}")
-        logging.info("✅ Auto-confirming SAS verification for authorized user...")
-        await client.confirm_key_verification(event.transaction_id)
-        await client.to_device(sas.get_mac())
+        if isinstance(event, nio.KeyVerificationStart):
+            if "m.sas.v1" not in getattr(event, "methods", []):
+                logging.warning(f"Unsupported verification method: {getattr(event, 'methods', None)}")
+                return
+            txn_id = getattr(event, "transaction_id", "")
+            logging.info(f"🔑 Received SAS Verification request from '{sender}' (txn: {txn_id})")
+            if txn_id in client.key_verifications:
+                res = await client.accept_key_verification(txn_id)
+                if isinstance(res, nio.ToDeviceError):
+                    logging.error(f"Failed to accept key verification: {res}")
+                else:
+                    logging.info(f"✅ Accepted SAS Verification with '{sender}'!")
 
-    elif isinstance(event, nio.KeyVerificationMac):
-        sas = client.key_verifications.get(event.transaction_id)
-        if not sas:
-            return
-        try:
-            sas.verify_mac(event)
-            logging.info(f"🎉 SUCCESS: Device for user '{sender}' is now FULLY VERIFIED (Shield 🛡️ / Green Tick ✅)!")
-        except Exception as e:
-            logging.error(f"MAC verification failed: {e}")
+        elif isinstance(event, nio.KeyVerificationKey):
+            txn_id = getattr(event, "transaction_id", "")
+            if txn_id in client.key_verifications:
+                sas = client.key_verifications[txn_id]
+                try:
+                    emojis = sas.get_emoji()
+                    emoji_str = "  ".join([f"{e[0]} {e[1]}" for e in emojis])
+                    logging.info(f"🔑 SAS Emoji Comparison with {sender}:\n👉 Emojis: {emoji_str}")
+                except Exception:
+                    pass
+                logging.info(f"✅ Auto-confirming SAS verification for '{sender}'...")
+                msg = client.confirm_key_verification(txn_id)
+                await client.to_device(msg)
 
-    elif isinstance(event, nio.KeyVerificationCancel):
-        logging.info(f"Verification canceled by {sender}: {event.reason} (code: {event.code})")
+        elif isinstance(event, nio.KeyVerificationMac):
+            txn_id = getattr(event, "transaction_id", "")
+            if txn_id in client.key_verifications:
+                sas = client.key_verifications[txn_id]
+                try:
+                    sas.verify_mac(event)
+                    if hasattr(sas, "other_olm_device") and sas.other_olm_device:
+                        client.verify_device(sas.other_olm_device)
+                    logging.info(f"🎉 SUCCESS: Device for user '{sender}' is now FULLY VERIFIED (Shield 🛡️ / Green Tick ✅)!")
+                except Exception as e:
+                    logging.error(f"MAC verification failed: {e}")
+
+        elif isinstance(event, nio.KeyVerificationCancel):
+            logging.info(f"Verification canceled by {sender}: {getattr(event, 'reason', '')} (code: {getattr(event, 'code', '')})")
+
+    except Exception as e:
+        logging.error(f"Error in to_device verification handler: {e}", exc_info=True)
 
 # Register SAS to-device callbacks on connection setup
 orig_setup_callbacks = botlib.Callbacks.setup_callbacks
