@@ -30,6 +30,23 @@ HOMESERVER = os.environ.get("MATRIX_HOMESERVER", "")
 USERNAME = os.environ.get("MATRIX_USERNAME", "")
 PASSWORD = os.environ.get("MATRIX_PASSWORD", "")
 
+# Access Control: Authorized Matrix User IDs (comma-separated, e.g. @amadeus:matrix.surtr.ir)
+ALLOWED_USERS_RAW = os.environ.get("MATRIX_ALLOWED_USERS", "")
+ALLOWED_USERS = set(u.strip() for u in ALLOWED_USERS_RAW.split(",") if u.strip())
+
+def is_user_allowed(user_id: str) -> bool:
+    """Checks if a user is authorized to interact with Antigravity."""
+    if not user_id:
+        return False
+    if not ALLOWED_USERS or "*" in ALLOWED_USERS:
+        return True
+    return user_id in ALLOWED_USERS
+
+if ALLOWED_USERS:
+    logging.info(f"🔒 Access Control Active: Only authorized users ({len(ALLOWED_USERS)}) can interact: {', '.join(ALLOWED_USERS)}")
+else:
+    logging.warning("⚠️ Access Control Warning: MATRIX_ALLOWED_USERS is empty. All users can interact.")
+
 # Fallbacks for runtime paths
 def find_agy_bin() -> str:
     """Finds the path to the Antigravity 'agy' CLI binary."""
@@ -380,10 +397,14 @@ async def handle_command(room_id: str, command: str, args: list) -> str:
         return f"❓ Unknown slash command `{command}`. Type `/help` for available commands."
 
 async def on_invite_callback(room, event):
-    """Automatically join room when invited."""
+    """Automatically join room when invited by an authorized user."""
     client = bot.api.async_client
     if event.state_key == client.user_id:
-        logging.info(f"Accepted invitation to room: {room.room_id}")
+        sender = getattr(event, "sender", None)
+        if not is_user_allowed(sender):
+            logging.warning(f"🚫 Rejected invitation from unauthorized user '{sender}' to room: {room.room_id}")
+            return
+        logging.info(f"Accepted invitation from authorized user '{sender}' to room: {room.room_id}")
         await client.join(room.room_id)
 
 async def download_matrix_media(client, event) -> str:
@@ -557,7 +578,8 @@ async def process_user_prompt(room_id: str, prompt_text: str, event_id: str = No
 async def image_handler(room, event):
     """Handles image and encrypted image upload events."""
     client = bot.api.async_client
-    if getattr(event, "sender", None) == client.user_id:
+    sender = getattr(event, "sender", None)
+    if sender == client.user_id or not is_user_allowed(sender):
         return
 
     logging.info(f"Received image event from {event.sender} in {room.room_id} (type: {type(event).__name__})")
@@ -596,6 +618,11 @@ async def message_handler(room, message):
     
     # Do not process messages sent by the bot itself
     if not match.is_not_from_this_bot():
+        return
+
+    sender = getattr(message, "sender", None)
+    if not is_user_allowed(sender):
+        logging.warning(f"🚫 Ignored message from unauthorized user '{sender}' in {room.room_id}")
         return
 
     text = message.body.strip() if hasattr(message, "body") and message.body else ""

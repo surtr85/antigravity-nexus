@@ -238,6 +238,8 @@ nano .env   # Enter your Matrix Homeserver, Username, and Password
 MATRIX_HOMESERVER=https://matrix.example.com
 MATRIX_USERNAME=your_bot_username
 MATRIX_PASSWORD=your_bot_password
+# Access control: only users in this list can invite and chat with the bot
+MATRIX_ALLOWED_USERS=@your_username:matrix.example.com
 # DEFAULT_WORKSPACE=/path/to/antigravity-nexus
 # AGY_BIN=/path/to/agy
 ```
