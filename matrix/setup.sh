@@ -58,7 +58,8 @@ EOF
 
 # 8. Reload and restart service
 systemctl --user daemon-reload
-systemctl --user enable --now antigravity-matrix.service
+systemctl --user enable antigravity-matrix.service
+systemctl --user restart antigravity-matrix.service
 
 echo ""
 echo "✅ Antigravity Matrix Bridge is installed and running!"
