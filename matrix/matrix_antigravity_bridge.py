@@ -84,6 +84,53 @@ if not HOMESERVER or not USERNAME or not PASSWORD:
     logging.error("❌ Missing Matrix credentials! Please configure MATRIX_HOMESERVER, MATRIX_USERNAME, and MATRIX_PASSWORD in your .env file.")
     sys.exit(1)
 
+# Monkey-patch botlib.Api.login to initialize full Olm E2EE machine & upload device keys
+orig_login = botlib.Api.login
+
+async def custom_login(self):
+    client_config = nio.AsyncClientConfig(
+        encryption_enabled=True,
+        store_sync_tokens=True
+    )
+    self.async_client = nio.AsyncClient(
+        homeserver=self.creds.homeserver,
+        user=self.creds.username,
+        device_id=self.creds.device_id,
+        store_path=STORE_DIR,
+        config=client_config
+    )
+    self.async_client.ignore_unverified_devices = True
+
+    if not self.creds.homeserver:
+        raise ValueError("Missing homeserver")
+    if not self.creds.username:
+        raise ValueError("Missing Username")
+    if not (self.creds.password or self.creds.login_token or self.creds.access_token):
+        raise ValueError("Missing password, login token, or access token.")
+
+    device_name = self.creds.device_name or "Antigravity Agent"
+    if self.creds.password:
+        resp = await self.async_client.login(
+            password=self.creds.password,
+            device_name=device_name
+        )
+    elif self.creds.access_token:
+        self.async_client.access_token = self.creds.access_token
+        self.async_client.user_id = f"@{self.creds.username}:{self.creds.homeserver.split('://')[-1]}"
+        self.async_client.load_store()
+        resp = None
+
+    if isinstance(resp, nio.responses.LoginError):
+        raise Exception(resp)
+
+    # Initialize Olm encryption store & upload device identity keys to homeserver
+    self.async_client.load_store()
+    if self.async_client.should_upload_keys:
+        await self.async_client.keys_upload()
+        logging.info("🔐 Successfully published E2EE Olm device keys to Matrix homeserver!")
+
+botlib.Api.login = custom_login
+
 # Configure bot with End-to-End Encryption (E2EE) support
 bot_config = botlib.Config()
 bot_config.encryption_enabled = True
