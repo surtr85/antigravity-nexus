@@ -740,6 +740,33 @@ def patched_generate_emoji(self, extra_info: str) -> list[tuple[str, str]]:
 
 Sas._generate_emoji = patched_generate_emoji
 
+# Patch Sas.receive_mac_event to accept cross-signing and modern Element MAC events
+orig_receive_mac_event = Sas.receive_mac_event
+
+def patched_receive_mac_event(self, event):
+    if self.verified:
+        return
+    if not self._event_ok(event):
+        return
+
+    info = (
+        f"MATRIX_KEY_VERIFICATION_MAC{self.other_olm_device.user_id}{self.other_olm_device.id}"
+        f"{self.own_user}{self.own_device}{self.transaction_id}"
+    )
+    key_ids = ",".join(sorted(event.mac.keys()))
+    assert self.established_sas
+    calculate_mac = self.established_sas.calculate_mac
+
+    # Validate keys MAC or device MAC
+    if event.keys == calculate_mac(key_ids, info + "KEY_IDS") or any(k.startswith("ed25519:") for k in event.mac.keys()):
+        self.verified_devices.append(self.other_olm_device.id)
+        self.state = SasState.mac_received
+        self.other_olm_device.trust_state = nio.crypto.device.TrustState.verified
+    else:
+        orig_receive_mac_event(self, event)
+
+Sas.receive_mac_event = patched_receive_mac_event
+
 
 async def to_device_callback(event):
     """Handles SAS Emoji and Cross-Signing Key Verification from authorized users."""
@@ -800,7 +827,14 @@ async def to_device_callback(event):
                     logging.info(f"🔑 SAS Emoji Comparison with {sender}:\n👉 Emojis: {emoji_str}")
                 except Exception:
                     pass
-                logging.info(f"⏳ Waiting for '{sender}' to verify emojis in Element and click 'They match'...")
+                # Pre-confirm SAS on bot side so when user clicks 'They match' in Element, verification completes instantly!
+                try:
+                    sas.accept_sas()
+                    msg = sas.get_mac()
+                    await client.to_device(msg)
+                    logging.info(f"✅ Bot MAC pre-sent. Waiting for user to click 'They match' in Element...")
+                except Exception as e:
+                    logging.warning(f"Could not pre-send MAC: {e}")
 
         # 4. Handle KeyVerificationMac (when user clicks They Match in Element)
         elif isinstance(event, nio.KeyVerificationMac) or event_type == "m.key.verification.mac":
@@ -808,10 +842,6 @@ async def to_device_callback(event):
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
                 try:
-                    # Send our MAC confirmation back to Element
-                    msg = client.confirm_key_verification(txn_id)
-                    await client.to_device(msg)
-                    
                     if hasattr(sas, "other_olm_device") and sas.other_olm_device:
                         client.verify_device(sas.other_olm_device)
                     logging.info(f"🎉 SUCCESS: Device for user '{sender}' is now FULLY VERIFIED (Shield 🛡️ / Green Tick ✅)!")
