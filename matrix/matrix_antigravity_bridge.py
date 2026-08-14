@@ -699,6 +699,39 @@ async def message_handler(room, message):
         attached_image=attached_img
     )
 
+# Patch matrix-nio's Sas commitment computation to use standard Matrix spec (unpadded base64)
+# matrix-nio default uses hexdigest which causes Element to reject with m.key_mismatch
+import base64
+from hashlib import sha256
+from nio.crypto.sas import Sas
+
+def _unpadded_base64_sha256(data: bytes) -> str:
+    return base64.b64encode(sha256(data).digest()).decode("utf-8").rstrip("=")
+
+orig_from_key_verification_start = Sas.from_key_verification_start
+
+@classmethod
+def patched_from_key_verification_start(cls, own_user, own_device, own_fp_key, other_olm_device, event):
+    obj = orig_from_key_verification_start.__func__(cls, own_user, own_device, own_fp_key, other_olm_device, event)
+    string_content = nio.Api.to_canonical_json(event.source["content"])
+    obj.canonical_start_content = string_content
+    # MSC1219 / Matrix Spec specifies unpadded base64-encoded SHA-256 for commitment
+    obj.commitment = _unpadded_base64_sha256(obj.pubkey.encode() + string_content.encode())
+    return obj
+
+Sas.from_key_verification_start = patched_from_key_verification_start
+
+def patched_check_commitment(self, key: str):
+    if not self.commitment:
+        return False
+    string_content = getattr(self, "canonical_start_content", "")
+    calc_b64 = _unpadded_base64_sha256(key.encode() + string_content.encode())
+    calc_hex = sha256(key.encode() + string_content.encode()).hexdigest()
+    return self.commitment in (calc_b64, calc_hex)
+
+Sas._check_commitment = patched_check_commitment
+
+
 async def to_device_callback(event):
     """Handles SAS Emoji and Cross-Signing Key Verification from authorized users."""
     try:
@@ -752,18 +785,13 @@ async def to_device_callback(event):
             txn_id = getattr(event, "transaction_id", "")
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
-                
-                # Send our public key to complete the key exchange
-                msg = sas.share_key()
-                await client.to_device(msg)
-                
                 try:
                     emojis = sas.get_emoji()
                     emoji_str = "  ".join([f"{e[0]} {e[1]}" for e in emojis])
                     logging.info(f"🔑 SAS Emoji Comparison with {sender}:\n👉 Emojis: {emoji_str}")
                 except Exception:
                     pass
-                logging.info(f"⏳ Waiting for '{sender}' to click 'They match' in Element...")
+                logging.info(f"⏳ Waiting for '{sender}' to verify emojis in Element and click 'They match'...")
 
         # 4. Handle KeyVerificationMac (when user clicks They Match and sends MAC)
         elif isinstance(event, nio.KeyVerificationMac) or event_type == "m.key.verification.mac":
