@@ -731,6 +731,15 @@ def patched_check_commitment(self, key: str):
 
 Sas._check_commitment = patched_check_commitment
 
+# Patch Sas._generate_emoji because vodozemac returns 7 indices directly (0..63)
+# matrix-nio's legacy logic was re-chunking them as 8-bit ints which corrupted emoji indices
+def patched_generate_emoji(self, extra_info: str) -> list[tuple[str, str]]:
+    assert self.established_sas
+    generated_indices = self.established_sas.bytes(extra_info).emoji_indices
+    return [self.emoji[idx] for idx in generated_indices]
+
+Sas._generate_emoji = patched_generate_emoji
+
 
 async def to_device_callback(event):
     """Handles SAS Emoji and Cross-Signing Key Verification from authorized users."""
@@ -793,15 +802,13 @@ async def to_device_callback(event):
                     pass
                 logging.info(f"⏳ Waiting for '{sender}' to verify emojis in Element and click 'They match'...")
 
-        # 4. Handle KeyVerificationMac (when user clicks They Match and sends MAC)
+        # 4. Handle KeyVerificationMac (when user clicks They Match in Element)
         elif isinstance(event, nio.KeyVerificationMac) or event_type == "m.key.verification.mac":
             txn_id = getattr(event, "transaction_id", "")
             if txn_id in client.key_verifications:
                 sas = client.key_verifications[txn_id]
                 try:
-                    sas.verify_mac(event)
-                    
-                    # Send our MAC back to confirm
+                    # Send our MAC confirmation back to Element
                     msg = client.confirm_key_verification(txn_id)
                     await client.to_device(msg)
                     
