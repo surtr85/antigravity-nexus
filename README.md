@@ -102,6 +102,18 @@ workspace/
 
 ---
 
+## 📚 Documentation Index
+
+For in-depth setup, CLI commands, and architecture details for each module, explore their dedicated guides:
+
+| Module | Dedicated Guide | Description |
+| :--- | :--- | :--- |
+| ⚡️ **Matrix Chat Bridge** | [📖 `matrix/README.md`](./matrix/README.md) | E2EE encryption, vision pipeline, slash commands, systemd daemon. |
+| 🧠 **Agent Memory MCP** | [📖 `mcp-servers/agent-memory/README.md`](./mcp-servers/agent-memory/README.md) | Obsidian vault schema, FTS5 retrieval, memory promotion lifecycle. |
+| 🌐 **Web Tools MCP** | [📖 `mcp-servers/web-tools/README.md`](./mcp-servers/web-tools/README.md) | Tavily search, Firecrawl scraping, Cloudflare Worker proxy (`worker.js`). |
+
+---
+
 ## 🌟 Core Features & Modules
 
 ### 1. ⚡️ Matrix E2EE Chat Bridge (`matrix/`)
@@ -113,6 +125,8 @@ Connect your Antigravity agent directly to any Matrix client (Element, FluffyCha
 - 💬 **Real-time UX**: Live typing indicators (`typing...`) and message status reactions (`⚙️` processing, `✅` completed).
 - 🧠 **Dynamic Directory Switching**: Change working directory on the fly via `/dir` without losing conversation memory.
 - 🛠 **Daemonized Service**: Pre-configured user `systemd` unit with automatic restart on boot.
+
+👉 **[📖 View Dedicated Matrix Bridge Guide & Setup →](./matrix/README.md)**
 
 #### ⚡️ Matrix Slash Commands Reference
 
@@ -143,6 +157,8 @@ A high-performance long-term memory system where **Obsidian Markdown files are t
   - `memory_consolidate`: Detects contradictions, duplicate notes, and stale entries.
 - ⚡️ **Zero Data Lock-in**: All memories are standard human-readable Markdown notes that can be edited in Obsidian.
 
+👉 **[📖 View Dedicated Agent Memory MCP Guide & CLI Tools →](./mcp-servers/agent-memory/README.md)**
+
 ---
 
 ### 3. 🌐 Web Tools MCP Server (`mcp-servers/web-tools/`)
@@ -152,6 +168,8 @@ Equips Antigravity with real-time web awareness and scraping capabilities:
 - 🔍 **`tavily_search`**: AI-optimized web search engine returning relevant snippets, URLs, and instant summaries.
 - 🕷️ **`firecrawl_scrape`**: Converts raw webpage URLs into clean, LLM-ready markdown (stripping ads, navbars, and headers).
 - 🛡️ **Cloudflare Worker Proxy (`worker.js`)**: Included Cloudflare Worker script that can be deployed for free to proxy API calls in restricted network environments.
+
+👉 **[📖 View Dedicated Web Tools & Cloudflare Proxy Guide →](./mcp-servers/web-tools/README.md)**
 
 ---
 
