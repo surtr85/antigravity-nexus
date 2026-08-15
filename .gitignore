@@ -32,8 +32,6 @@ uploads/
 *.db-journal
 *.db-wal
 *.db-shm
-**/.agent-memory/
-.agent-memory/
 
 # Temporary files & OS metadata
 .tmp-*

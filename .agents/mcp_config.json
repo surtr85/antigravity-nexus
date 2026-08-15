@@ -3,13 +3,6 @@
     "web-tools": {
       "command": "node",
       "args": ["mcp-servers/web-tools/src/index.mjs"]
-    },
-    "agent-memory": {
-      "command": "node",
-      "args": ["mcp-servers/agent-memory/dist/index.js"],
-      "env": {
-        "OBSIDIAN_VAULT": "mcp-servers/agent-memory/obsidian"
-      }
     }
   }
 }

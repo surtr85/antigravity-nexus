@@ -3,7 +3,7 @@
 # ⚡️ Antigravity Nexus
 
 ### Autonomous AI Agent Workspace & Ecosystem
-**End-to-End Encrypted Matrix Bridge • Obsidian Knowledge Graph Memory • Model Context Protocol (MCP) Tools**
+**End-to-End Encrypted Matrix Bridge • Model Context Protocol (MCP) Tools**
 
 [![Author](https://img.shields.io/badge/Author-Surtr-7928CA?style=for-the-badge&logo=github&logoColor=white)](https://github.com/surtr85)
 [![Node.js](https://img.shields.io/badge/Node.js-22%2B-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
@@ -16,44 +16,40 @@
 
 ---
 
-## 📖 Overview
+##  Overview
 
-**Antigravity Nexus** is a production-ready, highly extensible development workspace designed around **Google Antigravity (`agy`)**. It bridges the local AI coding assistant to external platforms and tools:
+**Antigravity Nexus** is a production-ready, highly extensible development workspace designed around autonomous AI coding agents (**Google Antigravity / `agy`** and **Oh My Pi / `omp`**). It bridges local AI assistants to external platforms and tools:
 
-1. 📱 **Matrix E2EE Chat Bridge**: Securely communicate with and control Antigravity from any Matrix client (Element, FluffyChat, Cinny) with on-the-fly multimodal image decryption, real-time typing indicators, and slash commands.
-2. 🧠 **Agent Memory MCP Server**: Persistent long-term memory where **Obsidian Markdown** notes serve as the human-readable source of truth, accelerated by an embedded **SQLite FTS5 full-text & graph search index**.
-3. 🌐 **Web Tools MCP Server**: Real-time web intelligence using **Tavily Search** and **Firecrawl Scraper**, with an included **Cloudflare Worker reverse proxy** for restricted network environments.
+1.  **Matrix E2EE Chat Bridge**: Securely communicate with and control your AI agents from any Matrix client (Element, FluffyChat, Cinny) with on-the-fly multimodal image decryption, real-time typing indicators, and slash commands.
+2.  **Web Tools MCP Server**: Real-time web intelligence using **Tavily Search** and **Firecrawl Scraper**, with an included **Cloudflare Worker reverse proxy** for restricted network environments.
 
 ---
 
-## 🏛️ System Architecture
+## ️ System Architecture
 
 ```mermaid
 graph TD
-    User(["👤 User / Developer"])
+    User([" User / Developer"])
 
     subgraph "Matrix Ecosystem"
-        Client["📱 Element / FluffyChat / SchildiChat"]
-        Homeserver["🌐 Matrix Homeserver (E2EE / Megolm)"]
+        Client[" Element / FluffyChat / SchildiChat"]
+        Homeserver[" Matrix Homeserver (E2EE / Megolm)"]
         Bridge["⚡ Matrix Antigravity Bridge (Python Daemon)"]
     end
 
     subgraph "Core Agent Engine"
-        AGY["🤖 Google Antigravity CLI (agy)"]
-        Config["⚙️ Workspace Config (.agents/)"]
+        AGY[" Agent CLI (agy / omp)"]
+        Config["⚙️ Workspace Config (.omp/ & .agents/)"]
     end
 
     subgraph "MCP Tool Servers"
-        MemMCP["🧠 agent-memory MCP Server"]
-        WebMCP["🌐 web-tools MCP Server"]
+        WebMCP[" web-tools MCP Server"]
     end
 
     subgraph "Storage & External APIs"
-        Vault[("📓 Obsidian Vault / Markdown")]
-        SQLite[("⚡ SQLite FTS5 Graph Index")]
-        Tavily["🔍 Tavily Search API"]
-        Firecrawl["🕷️ Firecrawl Scraper API"]
-        CFWorker["🛡️ Cloudflare Worker Proxy"]
+        Tavily[" Tavily Search API"]
+        Firecrawl["️ Firecrawl Scraper API"]
+        CFWorker["️ Cloudflare Worker Proxy"]
     end
 
     User -->|"Chat / Upload Images / Commands"| Client
@@ -61,11 +57,8 @@ graph TD
     Homeserver <-->|"E2EE Encrypted Sync"| Bridge
     Bridge -->|"Dynamic Prompts & Context"| AGY
     AGY <--> Config
-    AGY <-->|"stdio MCP Protocol"| MemMCP
     AGY <-->|"stdio MCP Protocol"| WebMCP
 
-    MemMCP <--> Vault
-    MemMCP <--> SQLite
     WebMCP -->|"Optional Proxy"| CFWorker
     CFWorker --> Tavily
     CFWorker --> Firecrawl
@@ -75,17 +68,19 @@ graph TD
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
 
 ```
 antigravity-nexus/
-├── README.md                      # Master repository documentation (this file)
+├── README.md                      # Master repository documentation
 ├── .gitignore                     # Global rules (ignores .env, keys, DBs, venvs)
 ├── .agents/
 │   └── mcp_config.json            # Model Context Protocol servers configuration
+├── .omp/
+│   └── mcp.json                   # Oh My Pi MCP server configuration
 ├── matrix/
 │   ├── README.md                  # Matrix bridge dedicated documentation
-│   ├── matrix_antigravity_bridge.py # Main Python Matrix-to-Antigravity bridge
+│   ├── matrix_antigravity_bridge.py # Main Python Matrix bridge daemon
 │   ├── run_bridge.sh              # Bridge launcher script (auto-loads .env)
 │   ├── setup.sh                   # 1-click automated installation & systemd setup
 │   ├── requirements.txt           # Python dependencies
@@ -94,26 +89,6 @@ antigravity-nexus/
 │   ├── store/                     # E2EE session & device key database (ignored)
 │   └── uploads/                   # Temporary decrypted media cache (ignored)
 ├── mcp-servers/
-│   ├── agent-memory/              # Persistent memory server backed by Obsidian
-│   │   ├── README.md              # agent-memory documentation
-│   │   ├── package.json           # Node.js dependencies
-│   │   ├── tsconfig.json          # TypeScript build configuration
-│   │   ├── src/                   # TypeScript source code (FTS5, Graph, Tools)
-│   │   ├── dist/                  # Compiled JavaScript bundle
-│   │   └── obsidian/              # Obsidian Markdown Knowledge Graph Vault
-│   │       ├── .obsidian/         # Obsidian appearance & plugin configs
-│   │       ├── .agent-memory/     # Auto-generated local SQLite FTS5 index (ignored)
-│   │       └── Agent Memory/      # Structured memory categories
-│   │           ├── Decisions/     # Architectural decisions
-│   │           ├── Experiences/   # Interaction logs & trials
-│   │           ├── Facts/         # Verified user & system facts
-│   │           ├── Lessons/       # Extracted learnings
-│   │           ├── Patterns/      # Recurring development patterns
-│   │           ├── Preferences/   # User preferences & personas
-│   │           ├── Problems/      # Solved bugs & failure analyses
-│   │           ├── Projects/      # Project tracking & layouts
-│   │           ├── Sessions/      # Chat transcripts & milestones
-│   │           └── Skills/        # Verified execution guides
 │   └── web-tools/                 # Real-time search & scraping MCP server
 │       ├── README.md              # web-tools documentation
 │       ├── worker.js              # Cloudflare Worker proxy script
@@ -125,31 +100,30 @@ antigravity-nexus/
 
 ---
 
-## 📚 Dedicated Documentation Index
+##  Dedicated Documentation Index
 
 For in-depth configuration, CLI commands, and architecture details for each module, explore their dedicated guides:
 
 | Module | Dedicated Guide | Description |
 | :--- | :--- | :--- |
-| ⚡️ **Matrix Chat Bridge** | [📖 `matrix/README.md`](./matrix/README.md) | E2EE encryption, vision pipeline, slash commands, systemd daemon. |
-| 🧠 **Agent Memory MCP** | [📖 `mcp-servers/agent-memory/README.md`](./mcp-servers/agent-memory/README.md) | Obsidian vault schema, FTS5 retrieval, memory promotion lifecycle. |
-| 🌐 **Web Tools MCP** | [📖 `mcp-servers/web-tools/README.md`](./mcp-servers/web-tools/README.md) | Tavily search, Firecrawl scraping, Cloudflare Worker proxy (`worker.js`). |
+| ⚡️ **Matrix Chat Bridge** | [ `matrix/README.md`](./matrix/README.md) | E2EE encryption, vision pipeline, slash commands, systemd daemon. |
+|  **Web Tools MCP** | [ `mcp-servers/web-tools/README.md`](./mcp-servers/web-tools/README.md) | Tavily search, Firecrawl scraping, Cloudflare Worker proxy (`worker.js`). |
 
 ---
 
-## 🌟 Core Features & Modules
+##  Core Features & Modules
 
 ### 1. ⚡️ Matrix E2EE Chat Bridge (`matrix/`)
 
-Connect your Antigravity agent directly to any Matrix client (Element, FluffyChat, Cinny, etc.) to pair-program and run tasks from your phone or desktop:
+Connect your agent directly to any Matrix client (Element, FluffyChat, Cinny, etc.) to pair-program and run tasks from your phone or desktop:
 
-- 🔐 **End-to-End Encryption (E2EE)**: Full support for encrypted Matrix rooms via `vodozemac` Megolm ratchets.
-- 🖼️ **Multimodal Vision**: Upload screenshots or images directly in chat; the bridge downloads, decrypts, and feeds them to Antigravity.
-- 💬 **Real-time UX**: Live typing indicators (`typing...`) and message status reactions (`⚙️` processing, `✅` completed).
-- 🧠 **Dynamic Directory Switching**: Change working directory on the fly via `/dir` without losing conversation memory.
-- 🛠 **Daemonized Service**: Pre-configured user `systemd` unit with automatic restart on boot.
+-  **End-to-End Encryption (E2EE)**: Full support for encrypted Matrix rooms via `vodozemac` Megolm ratchets.
+- ️ **Multimodal Vision**: Upload screenshots or images directly in chat; the bridge downloads, decrypts, and feeds them to the agent.
+-  **Real-time UX**: Live typing indicators (`typing...`) and message status reactions (`⚙️` processing, `✅` completed).
+-  **Dynamic Directory Switching**: Change working directory on the fly via `/dir` without losing conversation memory.
+-  **Daemonized Service**: Pre-configured user `systemd` unit with automatic restart on boot.
 
-👉 **[📖 View Dedicated Matrix Bridge Guide & Setup →](./matrix/README.md)**
+ **[ View Dedicated Matrix Bridge Guide & Setup →](./matrix/README.md)**
 
 #### ⚡️ Matrix Slash Commands Reference
 
@@ -163,40 +137,24 @@ Connect your Antigravity agent directly to any Matrix client (Element, FluffyCha
 | **`/system [prompt]`** | `/persona` | View or set custom system instructions / persona per room. |
 | **`/tools [on\|off]`** | `/tool` | Toggle workspace tool execution permissions from chat. |
 | **`/usage`** | `/quota`, `/stats` | Display room session info and visual progress bars for account quota. |
-| **`/skills`** | `/skill` | List all installed Antigravity skills and automation workflows. |
+| **`/skills`** | `/skill` | List all installed agent skills and automation workflows. |
 | **`/mcp`** | `/mcps` | List active Model Context Protocol (MCP) servers and tools. |
 
 ---
 
-### 2. 🧠 Agent Memory MCP Server (`mcp-servers/agent-memory/`)
+### 2.  Web Tools MCP Server (`mcp-servers/web-tools/`)
 
-A high-performance long-term memory system where **Obsidian Markdown files are the single source of truth**, indexed by an embedded **SQLite FTS5 + Graph** engine:
+Equips agents with real-time web awareness and scraping capabilities:
 
-- 📚 **10 Categorized Memory Types**: `Facts`, `Preferences`, `Decisions`, `Experiences`, `Lessons`, `Patterns`, `Skills`, `Problems`, `Projects`, and `Sessions`.
-- 🔍 **Hybrid Retrieval**: Combines FTS5 BM25 relevance, title weighting, status filtering, recency boosting, and Obsidian wikilink graph connectivity.
-- 🔄 **Autonomous Memory Lifecycle**:
-  - `memory_remember`: Stores memories with automated semantic deduplication.
-  - `memory_promote`: Elevates knowledge (`Experience → Lesson → Pattern → Skill`) while maintaining provenance.
-  - `memory_consolidate`: Detects contradictions, duplicate notes, and stale entries.
-- ⚡️ **Zero Data Lock-in**: All memories are standard human-readable Markdown notes that can be edited in Obsidian.
+-  **`tavily_search`**: AI-optimized web search engine returning relevant snippets, URLs, and instant summaries.
+- ️ **`firecrawl_scrape`**: Converts raw webpage URLs into clean, LLM-ready markdown (stripping ads, navbars, and headers).
+- ️ **Cloudflare Worker Proxy (`worker.js`)**: Included Cloudflare Worker script that can be deployed for free to proxy API calls in restricted network environments.
 
-👉 **[📖 View Dedicated Agent Memory MCP Guide & CLI Tools →](./mcp-servers/agent-memory/README.md)**
+ **[ View Dedicated Web Tools & Cloudflare Proxy Guide →](./mcp-servers/web-tools/README.md)**
 
 ---
 
-### 3. 🌐 Web Tools MCP Server (`mcp-servers/web-tools/`)
-
-Equips Antigravity with real-time web awareness and scraping capabilities:
-
-- 🔍 **`tavily_search`**: AI-optimized web search engine returning relevant snippets, URLs, and instant summaries.
-- 🕷️ **`firecrawl_scrape`**: Converts raw webpage URLs into clean, LLM-ready markdown (stripping ads, navbars, and headers).
-- 🛡️ **Cloudflare Worker Proxy (`worker.js`)**: Included Cloudflare Worker script that can be deployed for free to proxy API calls in restricted network environments.
-
-👉 **[📖 View Dedicated Web Tools & Cloudflare Proxy Guide →](./mcp-servers/web-tools/README.md)**
-
----
-
-## 🚀 Quickstart Guide (New Machine Setup)
+##  Quickstart Guide (New Machine Setup)
 
 ### Step 1: Clone the Repository
 ```bash
@@ -204,17 +162,10 @@ git clone https://github.com/surtr85/antigravity-nexus.git
 cd antigravity-nexus
 ```
 
-### Step 2: Install Node.js MCP Dependencies
+### Step 2: Install Web Tools MCP Dependencies
 ```bash
-# Install Web Tools dependencies
 cd mcp-servers/web-tools
 npm install
-cp .env.example .env
-
-# Install and build Agent Memory
-cd ../agent-memory
-npm install
-npm run build
 cp .env.example .env
 cd ../..
 ```
@@ -257,16 +208,9 @@ FIRECRAWL_API_KEY=your_firecrawl_api_key
 # PROXY_URL=https://your-worker.workers.dev
 ```
 
-### Agent Memory (`mcp-servers/agent-memory/.env`)
-```env
-OBSIDIAN_VAULT=./obsidian
-MEMORY_LOG_LEVEL=info
-MEMORY_EMBEDDINGS=disabled
-```
-
 ---
 
-## 🌐 Deploying the Cloudflare Worker Proxy
+##  Deploying the Cloudflare Worker Proxy
 
 To proxy `web-tools` API calls through Cloudflare Workers:
 
@@ -277,20 +221,20 @@ To proxy `web-tools` API calls through Cloudflare Workers:
 
 ---
 
-## 🛡️ Security & Privacy Guarantee
+## ️ Security & Privacy Guarantee
 
-- 🔒 **Zero Hardcoded Secrets**: All tokens, API keys, passwords, and private paths are strictly loaded from local `.env` files.
-- 🚫 **Exhaustive `.gitignore`**: Virtual environments, key stores, SQLite journals, downloaded media, and secret configs are barred from version control.
-- 🔐 **Isolated Encryption Store**: Matrix Megolm keys and SQLite caches remain strictly on the host machine.
+-  **Zero Hardcoded Secrets**: All tokens, API keys, passwords, and private paths are strictly loaded from local `.env` files.
+-  **Exhaustive `.gitignore`**: Virtual environments, key stores, SQLite journals, downloaded media, and secret configs are barred from version control.
+-  **Isolated Encryption Store**: Matrix Megolm keys and SQLite caches remain strictly on the host machine.
 
 ---
 
-## 👤 Author & Maintainer
+##  Author & Maintainer
 
 Created & maintained by **[Surtr](https://github.com/surtr85)**.
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
