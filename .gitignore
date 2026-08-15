@@ -45,3 +45,6 @@ Thumbs.db
 **/.obsidian/graph.json
 **/.obsidian/cache/
 **/.obsidian/backups/
+
+# Jujutsu VCS
+.jj/

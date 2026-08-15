@@ -6,12 +6,24 @@ import dns from "node:dns";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { Resolver } from "node:dns/promises";
-import dotenv from "dotenv";
+import fs from "node:fs";
 
-// Load .env from web-tools directory or process root
+// Load .env silently from web-tools directory or process root
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.resolve(__dirname, "../.env") });
-dotenv.config();
+const envPaths = [
+  path.resolve(__dirname, "../.env"),
+  path.resolve(process.cwd(), ".env")
+];
+
+for (const envPath of envPaths) {
+  if (fs.existsSync(envPath)) {
+    try {
+      process.loadEnvFile(envPath);
+    } catch (e) {
+      // ignore
+    }
+  }
+}
 
 const PROXY_URL = process.env.PROXY_URL || "";
 const TAVILY_API_KEY = process.env.TAVILY_API_KEY || "";
