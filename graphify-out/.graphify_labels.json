@@ -1,0 +1,15 @@
+{
+  "0": "matrix_antigravity_bridge.py",
+  "1": "package.json",
+  "2": "handle_command",
+  "3": "image_handler",
+  "4": "index.mjs",
+  "5": "on_invite_callback",
+  "6": "process_user_prompt",
+  "7": "web-tools",
+  "8": "run_bridge.sh",
+  "9": "setup.sh",
+  "10": "worker.js",
+  "11": "rules/graphify.md",
+  "12": "workflows/graphify.md"
+}
