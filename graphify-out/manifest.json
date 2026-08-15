@@ -1,0 +1,44 @@
+{
+  ".omp/mcp.json": {
+    "mtime": 1786832384.6019382,
+    "seen": 1786832716.5737214,
+    "ast_hash": "5f1802ff479654a9cf2783fd465fa998",
+    "semantic_hash": "5f1802ff479654a9cf2783fd465fa998"
+  },
+  "matrix/matrix_antigravity_bridge.py": {
+    "mtime": 1786744291.428175,
+    "seen": 1786832716.5737247,
+    "ast_hash": "ec53c076090f29f77b25d0c2fda55363",
+    "semantic_hash": "ec53c076090f29f77b25d0c2fda55363"
+  },
+  "matrix/run_bridge.sh": {
+    "mtime": 1786738177.6997721,
+    "seen": 1786832716.573726,
+    "ast_hash": "282454b510139919d78cab3b6ada02a7",
+    "semantic_hash": "282454b510139919d78cab3b6ada02a7"
+  },
+  "matrix/setup.sh": {
+    "mtime": 1786740515.434119,
+    "seen": 1786832716.5737267,
+    "ast_hash": "97a744b2ec40caab30e371ece66dbfb8",
+    "semantic_hash": "97a744b2ec40caab30e371ece66dbfb8"
+  },
+  "mcp-servers/web-tools/package.json": {
+    "mtime": 1786738177.7333932,
+    "seen": 1786832716.5737271,
+    "ast_hash": "1455358e05c8cb6d04f41a634bd8c707",
+    "semantic_hash": "1455358e05c8cb6d04f41a634bd8c707"
+  },
+  "mcp-servers/web-tools/src/index.mjs": {
+    "mtime": 1786829816.57802,
+    "seen": 1786832716.573728,
+    "ast_hash": "f9cae580f6d399758efeec076f6aaa7d",
+    "semantic_hash": "f9cae580f6d399758efeec076f6aaa7d"
+  },
+  "mcp-servers/web-tools/worker.js": {
+    "mtime": 1786738177.733802,
+    "seen": 1786832716.5737288,
+    "ast_hash": "cdab7fb9df082606bb5b3fcc458f9a3d",
+    "semantic_hash": "cdab7fb9df082606bb5b3fcc458f9a3d"
+  }
+}

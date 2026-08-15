@@ -44,5 +44,8 @@ Thumbs.db
 **/.obsidian/cache/
 **/.obsidian/backups/
 
+
+# Graphify cache
+graphify-out/cache/
 # Jujutsu VCS
 .jj/

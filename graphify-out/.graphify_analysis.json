@@ -1,0 +1,235 @@
+{
+  "communities": {
+    "0": [
+      "logged_in_async",
+      "matrix_matrix_antigravity_bridge",
+      "matrix_matrix_antigravity_bridge_auto_cross_sign_self",
+      "matrix_matrix_antigravity_bridge_custom_login",
+      "matrix_matrix_antigravity_bridge_find_agy_bin",
+      "matrix_matrix_antigravity_bridge_find_default_workspace",
+      "matrix_matrix_antigravity_bridge_patched_check_commitment",
+      "matrix_matrix_antigravity_bridge_patched_client_join",
+      "matrix_matrix_antigravity_bridge_patched_from_key_verification_start",
+      "matrix_matrix_antigravity_bridge_patched_generate_emoji",
+      "matrix_matrix_antigravity_bridge_patched_receive_mac_event",
+      "matrix_matrix_antigravity_bridge_rationale_57",
+      "matrix_matrix_antigravity_bridge_rationale_69",
+      "matrix_matrix_antigravity_bridge_rationale_92",
+      "matrix_matrix_antigravity_bridge_unpadded_base64_sha256"
+    ],
+    "1": [
+      "dotenv",
+      "mcp_servers_web_tools_package",
+      "mcp_servers_web_tools_package_dependencies",
+      "mcp_servers_web_tools_package_dependencies_dotenv",
+      "mcp_servers_web_tools_package_dependencies_modelcontextprotocol_sdk",
+      "mcp_servers_web_tools_package_description",
+      "mcp_servers_web_tools_package_main",
+      "mcp_servers_web_tools_package_name",
+      "mcp_servers_web_tools_package_scripts",
+      "mcp_servers_web_tools_package_scripts_dev",
+      "mcp_servers_web_tools_package_scripts_start",
+      "mcp_servers_web_tools_package_type",
+      "mcp_servers_web_tools_package_version",
+      "modelcontextprotocol_sdk"
+    ],
+    "2": [
+      "matrix_matrix_antigravity_bridge_format_progress_bar",
+      "matrix_matrix_antigravity_bridge_get_usage_quota",
+      "matrix_matrix_antigravity_bridge_handle_command",
+      "matrix_matrix_antigravity_bridge_list_mcp",
+      "matrix_matrix_antigravity_bridge_list_skills",
+      "matrix_matrix_antigravity_bridge_rationale_281",
+      "matrix_matrix_antigravity_bridge_rationale_302",
+      "matrix_matrix_antigravity_bridge_rationale_366",
+      "matrix_matrix_antigravity_bridge_rationale_394",
+      "matrix_matrix_antigravity_bridge_rationale_446",
+      "matrix_matrix_antigravity_bridge_run_agy"
+    ],
+    "3": [
+      "matrix_matrix_antigravity_bridge_custom_setup_callbacks",
+      "matrix_matrix_antigravity_bridge_download_matrix_media",
+      "matrix_matrix_antigravity_bridge_image_handler",
+      "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "matrix_matrix_antigravity_bridge_rationale_43",
+      "matrix_matrix_antigravity_bridge_rationale_589",
+      "matrix_matrix_antigravity_bridge_rationale_757",
+      "matrix_matrix_antigravity_bridge_rationale_908",
+      "matrix_matrix_antigravity_bridge_to_device_callback"
+    ],
+    "4": [
+      "mcp_servers_web_tools_src_index",
+      "mcp_servers_web_tools_src_index_dirname",
+      "mcp_servers_web_tools_src_index_envpaths",
+      "mcp_servers_web_tools_src_index_fetchwithpublicdns",
+      "mcp_servers_web_tools_src_index_makeapicall",
+      "mcp_servers_web_tools_src_index_publicdnslookup",
+      "mcp_servers_web_tools_src_index_publicresolver",
+      "mcp_servers_web_tools_src_index_server",
+      "mcp_servers_web_tools_src_index_transport"
+    ],
+    "5": [
+      "matrix_matrix_antigravity_bridge_main",
+      "matrix_matrix_antigravity_bridge_on_invite_callback",
+      "matrix_matrix_antigravity_bridge_rationale_331",
+      "matrix_matrix_antigravity_bridge_rationale_338",
+      "matrix_matrix_antigravity_bridge_rationale_569",
+      "matrix_matrix_antigravity_bridge_render_markdown_to_html",
+      "matrix_matrix_antigravity_bridge_send_formatted_message"
+    ],
+    "6": [
+      "matrix_matrix_antigravity_bridge_message_handler",
+      "matrix_matrix_antigravity_bridge_process_user_prompt",
+      "matrix_matrix_antigravity_bridge_rationale_427",
+      "matrix_matrix_antigravity_bridge_rationale_662",
+      "matrix_matrix_antigravity_bridge_rationale_794",
+      "matrix_matrix_antigravity_bridge_send_reaction",
+      "on_message_event"
+    ],
+    "7": [
+      "mcp_command_node",
+      "omp_mcp",
+      "omp_mcp_mcp_server_web_tools"
+    ],
+    "8": [
+      "matrix_run_bridge",
+      "matrix_run_bridge_sh__entry"
+    ],
+    "9": [
+      "matrix_setup",
+      "matrix_setup_sh__entry"
+    ],
+    "10": [
+      "mcp_servers_web_tools_worker",
+      "mcp_servers_web_tools_worker_fetch"
+    ]
+  },
+  "cohesion": {
+    "0": 0.1619047619047619,
+    "1": 0.14285714285714285,
+    "2": 0.18181818181818182,
+    "3": 0.2222222222222222,
+    "4": 0.2777777777777778,
+    "5": 0.2857142857142857,
+    "6": 0.2857142857142857,
+    "7": 0.6666666666666666,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0
+  },
+  "gods": [
+    {
+      "id": "matrix_matrix_antigravity_bridge_process_user_prompt",
+      "label": "process_user_prompt()",
+      "degree": 8
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_handle_command",
+      "label": "handle_command()",
+      "degree": 6
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_image_handler",
+      "label": "image_handler()",
+      "degree": 6
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "label": "is_user_allowed()",
+      "degree": 6
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_get_usage_quota",
+      "label": "get_usage_quota()",
+      "degree": 5
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_on_invite_callback",
+      "label": "on_invite_callback()",
+      "degree": 5
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_send_formatted_message",
+      "label": "send_formatted_message()",
+      "degree": 5
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_message_handler",
+      "label": "message_handler()",
+      "degree": 5
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_run_agy",
+      "label": "run_agy()",
+      "degree": 4
+    },
+    {
+      "id": "matrix_matrix_antigravity_bridge_to_device_callback",
+      "label": "to_device_callback()",
+      "degree": 4
+    }
+  ],
+  "surprises": [
+    {
+      "source": "main()",
+      "target": "image_handler()",
+      "source_files": [
+        "matrix/matrix_antigravity_bridge.py",
+        "matrix/matrix_antigravity_bridge.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "indirect_call",
+      "note": "Bridges community 3 → community 5"
+    },
+    {
+      "source": "process_user_prompt()",
+      "target": "handle_command()",
+      "source_files": [
+        "matrix/matrix_antigravity_bridge.py",
+        "matrix/matrix_antigravity_bridge.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 2 → community 6"
+    },
+    {
+      "source": "image_handler()",
+      "target": "process_user_prompt()",
+      "source_files": [
+        "matrix/matrix_antigravity_bridge.py",
+        "matrix/matrix_antigravity_bridge.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 3 → community 6"
+    },
+    {
+      "source": "process_user_prompt()",
+      "target": "send_formatted_message()",
+      "source_files": [
+        "matrix/matrix_antigravity_bridge.py",
+        "matrix/matrix_antigravity_bridge.py"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "note": "Bridges community 5 → community 6"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `dotenv` connect `Community 1` to `Community 0`?",
+      "why": "High betweenness centrality (0.202) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `description`, `main`, `name` to the rest of the system?",
+      "why": "16 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `Community 1` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.14285714285714285 - nodes in this community are weakly interconnected."
+    }
+  ]
+}
