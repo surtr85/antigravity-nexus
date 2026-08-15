@@ -10,10 +10,10 @@
       "source_location": "L91",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_auto_cross_sign_self",
       "community": 0,
-      "norm_label": "auto_cross_sign_self()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_auto_cross_sign_self"
+      "norm_label": "auto_cross_sign_self()"
     },
     {
       "label": "custom_login()",
@@ -22,10 +22,10 @@
       "source_location": "L202",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_custom_login",
       "community": 0,
-      "norm_label": "custom_login()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_custom_login"
+      "norm_label": "custom_login()"
     },
     {
       "label": "find_agy_bin()",
@@ -34,10 +34,10 @@
       "source_location": "L56",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_find_agy_bin",
       "community": 0,
-      "norm_label": "find_agy_bin()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_find_agy_bin"
+      "norm_label": "find_agy_bin()"
     },
     {
       "label": "find_default_workspace()",
@@ -46,10 +46,70 @@
       "source_location": "L68",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_find_default_workspace",
       "community": 0,
-      "norm_label": "find_default_workspace()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_find_default_workspace"
+      "norm_label": "find_default_workspace()"
+    },
+    {
+      "label": "format_progress_bar()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L360",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_format_progress_bar",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "format_progress_bar()"
+    },
+    {
+      "label": "get_usage_quota()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L365",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_get_usage_quota",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "get_usage_quota()"
+    },
+    {
+      "label": "handle_command()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L445",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_handle_command",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "handle_command()"
+    },
+    {
+      "label": "list_mcp()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L301",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_list_mcp",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "list_mcp()"
+    },
+    {
+      "label": "list_skills()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L280",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_list_skills",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "list_skills()"
     },
     {
       "label": "patched_check_commitment()",
@@ -58,10 +118,10 @@
       "source_location": "L854",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_patched_check_commitment",
       "community": 0,
-      "norm_label": "patched_check_commitment()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_patched_check_commitment"
+      "norm_label": "patched_check_commitment()"
     },
     {
       "label": "patched_client_join()",
@@ -70,10 +130,10 @@
       "source_location": "L562",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_patched_client_join",
       "community": 0,
-      "norm_label": "patched_client_join()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_patched_client_join"
+      "norm_label": "patched_client_join()"
     },
     {
       "label": "patched_from_key_verification_start()",
@@ -82,10 +142,10 @@
       "source_location": "L844",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_patched_from_key_verification_start",
       "community": 0,
-      "norm_label": "patched_from_key_verification_start()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_patched_from_key_verification_start"
+      "norm_label": "patched_from_key_verification_start()"
     },
     {
       "label": "patched_generate_emoji()",
@@ -94,10 +154,10 @@
       "source_location": "L866",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_patched_generate_emoji",
       "community": 0,
-      "norm_label": "patched_generate_emoji()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_patched_generate_emoji"
+      "norm_label": "patched_generate_emoji()"
     },
     {
       "label": "patched_receive_mac_event()",
@@ -106,10 +166,22 @@
       "source_location": "L876",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_patched_receive_mac_event",
       "community": 0,
-      "norm_label": "patched_receive_mac_event()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_patched_receive_mac_event"
+      "norm_label": "patched_receive_mac_event()"
+    },
+    {
+      "label": "run_agy()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L393",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_run_agy",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "run_agy()"
     },
     {
       "label": "_unpadded_base64_sha256()",
@@ -118,10 +190,10 @@
       "source_location": "L838",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256",
       "community": 0,
-      "norm_label": "_unpadded_base64_sha256()",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256"
+      "norm_label": "_unpadded_base64_sha256()"
     },
     {
       "label": "fetch()",
@@ -136,88 +208,16 @@
       "id": "mcp_servers_web_tools_worker_fetch"
     },
     {
-      "label": "format_progress_bar()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L360",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "format_progress_bar()",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_format_progress_bar"
-    },
-    {
-      "label": "get_usage_quota()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L365",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "get_usage_quota()",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_get_usage_quota"
-    },
-    {
-      "label": "handle_command()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L445",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "handle_command()",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_handle_command"
-    },
-    {
-      "label": "list_mcp()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L301",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "list_mcp()",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_list_mcp"
-    },
-    {
-      "label": "list_skills()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L280",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "list_skills()",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_list_skills"
-    },
-    {
-      "label": "run_agy()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L393",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 2,
-      "norm_label": "run_agy()",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_run_agy"
-    },
-    {
       "label": "custom_setup_callbacks()",
       "file_type": "code",
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L1007",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_custom_setup_callbacks",
       "community": 3,
-      "norm_label": "custom_setup_callbacks()",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_custom_setup_callbacks"
+      "norm_label": "custom_setup_callbacks()"
     },
     {
       "label": "download_matrix_media()",
@@ -226,10 +226,10 @@
       "source_location": "L588",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_download_matrix_media",
       "community": 3,
-      "norm_label": "download_matrix_media()",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_download_matrix_media"
+      "norm_label": "download_matrix_media()"
     },
     {
       "label": "image_handler()",
@@ -238,10 +238,10 @@
       "source_location": "L756",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_image_handler",
       "community": 3,
-      "norm_label": "image_handler()",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_image_handler"
+      "norm_label": "image_handler()"
     },
     {
       "label": "is_user_allowed()",
@@ -250,10 +250,34 @@
       "source_location": "L42",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_is_user_allowed",
       "community": 3,
-      "norm_label": "is_user_allowed()",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_is_user_allowed"
+      "norm_label": "is_user_allowed()"
+    },
+    {
+      "label": "main()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L1031",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_main",
+      "community": 3,
+      "community_name": "image_handler",
+      "norm_label": "main()"
+    },
+    {
+      "label": "on_invite_callback()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L568",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_on_invite_callback",
+      "community": 3,
+      "community_name": "image_handler",
+      "norm_label": "on_invite_callback()"
     },
     {
       "label": "to_device_callback()",
@@ -262,10 +286,10 @@
       "source_location": "L907",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_to_device_callback",
       "community": 3,
-      "norm_label": "to_device_callback()",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_to_device_callback"
+      "norm_label": "to_device_callback()"
     },
     {
       "label": "fetchWithPublicDns()",
@@ -304,64 +328,16 @@
       "id": "mcp_servers_web_tools_src_index_publicdnslookup"
     },
     {
-      "label": "main()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L1031",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "main()",
-      "community_name": "on_invite_callback",
-      "id": "matrix_matrix_antigravity_bridge_main"
-    },
-    {
-      "label": "on_invite_callback()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L568",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "on_invite_callback()",
-      "community_name": "on_invite_callback",
-      "id": "matrix_matrix_antigravity_bridge_on_invite_callback"
-    },
-    {
-      "label": "render_markdown_to_html()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L330",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "render_markdown_to_html()",
-      "community_name": "on_invite_callback",
-      "id": "matrix_matrix_antigravity_bridge_render_markdown_to_html"
-    },
-    {
-      "label": "send_formatted_message()",
-      "file_type": "code",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L337",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 5,
-      "norm_label": "send_formatted_message()",
-      "community_name": "on_invite_callback",
-      "id": "matrix_matrix_antigravity_bridge_send_formatted_message"
-    },
-    {
       "label": "message_handler()",
       "file_type": "code",
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L793",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_message_handler",
       "community": 6,
-      "norm_label": "message_handler()",
       "community_name": "process_user_prompt",
-      "id": "matrix_matrix_antigravity_bridge_message_handler"
+      "norm_label": "message_handler()"
     },
     {
       "label": "process_user_prompt()",
@@ -370,10 +346,34 @@
       "source_location": "L661",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_process_user_prompt",
       "community": 6,
-      "norm_label": "process_user_prompt()",
       "community_name": "process_user_prompt",
-      "id": "matrix_matrix_antigravity_bridge_process_user_prompt"
+      "norm_label": "process_user_prompt()"
+    },
+    {
+      "label": "render_markdown_to_html()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L330",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_render_markdown_to_html",
+      "community": 6,
+      "community_name": "process_user_prompt",
+      "norm_label": "render_markdown_to_html()"
+    },
+    {
+      "label": "send_formatted_message()",
+      "file_type": "code",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L337",
+      "_callable": true,
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_send_formatted_message",
+      "community": 6,
+      "community_name": "process_user_prompt",
+      "norm_label": "send_formatted_message()"
     },
     {
       "label": "send_reaction()",
@@ -382,10 +382,10 @@
       "source_location": "L426",
       "_callable": true,
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_send_reaction",
       "community": 6,
-      "norm_label": "send_reaction()",
       "community_name": "process_user_prompt",
-      "id": "matrix_matrix_antigravity_bridge_send_reaction"
+      "norm_label": "send_reaction()"
     },
     {
       "label": "logged_in_async",
@@ -393,10 +393,10 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
+      "id": "logged_in_async",
       "community": 0,
-      "norm_label": "logged_in_async",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "logged_in_async"
+      "norm_label": "logged_in_async"
     },
     {
       "label": "matrix_antigravity_bridge.py",
@@ -404,10 +404,65 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L1",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge",
       "community": 0,
-      "norm_label": "matrix_antigravity_bridge.py",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge"
+      "norm_label": "matrix_antigravity_bridge.py"
+    },
+    {
+      "label": "Scans for available Antigravity skills across standard directories.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L281",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_281",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "scans for available antigravity skills across standard directories."
+    },
+    {
+      "label": "Scans for available MCP servers and tools across standard directories.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L302",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_302",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "scans for available mcp servers and tools across standard directories."
+    },
+    {
+      "label": "Queries agy /usage and formats quota visual progress bars.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L366",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_366",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "queries agy /usage and formats quota visual progress bars."
+    },
+    {
+      "label": "Executes agy CLI command and parses JSON response.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L394",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_394",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "executes agy cli command and parses json response."
+    },
+    {
+      "label": "Handles custom /slash commands.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L446",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_446",
+      "community": 0,
+      "community_name": "matrix_antigravity_bridge.py",
+      "norm_label": "handles custom /slash commands."
     },
     {
       "label": "Finds the path to the Antigravity 'agy' CLI binary.",
@@ -415,10 +470,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L57",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_57",
       "community": 0,
-      "norm_label": "finds the path to the antigravity 'agy' cli binary.",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_rationale_57"
+      "norm_label": "finds the path to the antigravity 'agy' cli binary."
     },
     {
       "label": "Determines the default workspace root directory.",
@@ -426,10 +481,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L69",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_69",
       "community": 0,
-      "norm_label": "determines the default workspace root directory.",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_rationale_69"
+      "norm_label": "determines the default workspace root directory."
     },
     {
       "label": "Automatically decrypts SSK using the Recovery Key and signs the device so it is\u2026",
@@ -437,10 +492,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L92",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_92",
       "community": 0,
-      "norm_label": "automatically decrypts ssk using the recovery key and signs the device so it is...",
       "community_name": "matrix_antigravity_bridge.py",
-      "id": "matrix_matrix_antigravity_bridge_rationale_92"
+      "norm_label": "automatically decrypts ssk using the recovery key and signs the device so it is..."
     },
     {
       "label": "package.json",
@@ -613,10 +668,10 @@
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agents_rules_graphify",
       "community": 11,
       "community_name": "rules/graphify.md",
-      "norm_label": "rules/graphify.md"
+      "norm_label": "rules/graphify.md",
+      "id": "agents_rules_graphify"
     },
     {
       "label": "graphify",
@@ -624,10 +679,10 @@
       "source_file": ".agents/rules/graphify.md",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "agents_rules_graphify_graphify",
       "community": 11,
       "community_name": "rules/graphify.md",
-      "norm_label": "graphify"
+      "norm_label": "graphify",
+      "id": "agents_rules_graphify_graphify"
     },
     {
       "label": "workflows/graphify.md",
@@ -635,10 +690,10 @@
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L1",
       "_origin": "ast",
-      "id": "agents_workflows_graphify",
       "community": 12,
       "community_name": "workflows/graphify.md",
-      "norm_label": "workflows/graphify.md"
+      "norm_label": "workflows/graphify.md",
+      "id": "agents_workflows_graphify"
     },
     {
       "label": "Workflow: graphify",
@@ -646,65 +701,241 @@
       "source_file": ".agents/workflows/graphify.md",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "agents_workflows_graphify_workflow_graphify",
       "community": 12,
       "community_name": "workflows/graphify.md",
-      "norm_label": "workflow: graphify"
+      "norm_label": "workflow: graphify",
+      "id": "agents_workflows_graphify_workflow_graphify"
     },
     {
-      "label": "Scans for available Antigravity skills across standard directories.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L281",
+      "label": "1. \u26a1\ufe0f Matrix E2EE Chat Bridge (`matrix/`)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L116",
       "_origin": "ast",
+      "id": "readme_1_matrix_e2ee_chat_bridge_matrix",
       "community": 2,
-      "norm_label": "scans for available antigravity skills across standard directories.",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_rationale_281"
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "1. \u26a1\ufe0f matrix e2ee chat bridge (`matrix/`)"
     },
     {
-      "label": "Scans for available MCP servers and tools across standard directories.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L302",
+      "label": "2.  Web Tools MCP Server (`mcp-servers/web-tools/`)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L145",
       "_origin": "ast",
+      "id": "readme_2_web_tools_mcp_server_mcp_servers_web_tools",
       "community": 2,
-      "norm_label": "scans for available mcp servers and tools across standard directories.",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_rationale_302"
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "2.  web tools mcp server (`mcp-servers/web-tools/`)"
     },
     {
-      "label": "Queries agy /usage and formats quota visual progress bars.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L366",
+      "label": "\u26a1\ufe0f Antigravity Nexus",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L3",
       "_origin": "ast",
+      "id": "readme_antigravity_nexus",
       "community": 2,
-      "norm_label": "queries agy /usage and formats quota visual progress bars.",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_rationale_366"
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "\u26a1\ufe0f antigravity nexus"
     },
     {
-      "label": "Executes agy CLI command and parses JSON response.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L394",
+      "label": "Author & Maintainer",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L232",
       "_origin": "ast",
+      "id": "readme_author_maintainer",
       "community": 2,
-      "norm_label": "executes agy cli command and parses json response.",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_rationale_394"
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "author & maintainer"
     },
     {
-      "label": "Handles custom /slash commands.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L446",
+      "label": "Autonomous AI Agent Workspace & Ecosystem",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L5",
       "_origin": "ast",
+      "id": "readme_autonomous_ai_agent_workspace_ecosystem",
       "community": 2,
-      "norm_label": "handles custom /slash commands.",
-      "community_name": "handle_command",
-      "id": "matrix_matrix_antigravity_bridge_rationale_446"
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "autonomous ai agent workspace & ecosystem"
+    },
+    {
+      "label": "Core Features & Modules",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "readme_core_features_modules",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "core features & modules"
+    },
+    {
+      "label": "Dedicated Documentation Index",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "readme_dedicated_documentation_index",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "dedicated documentation index"
+    },
+    {
+      "label": "Deploying the Cloudflare Worker Proxy",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L213",
+      "_origin": "ast",
+      "id": "readme_deploying_the_cloudflare_worker_proxy",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "deploying the cloudflare worker proxy"
+    },
+    {
+      "label": "\u2699\ufe0f Environment Variables Summary",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L185",
+      "_origin": "ast",
+      "id": "readme_environment_variables_summary",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "\u2699\ufe0f environment variables summary"
+    },
+    {
+      "label": "License",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L238",
+      "_origin": "ast",
+      "id": "readme_license",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "license"
+    },
+    {
+      "label": "Matrix Bridge (`matrix/.env`)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L187",
+      "_origin": "ast",
+      "id": "readme_matrix_bridge_matrix_env",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "matrix bridge (`matrix/.env`)"
+    },
+    {
+      "label": "\u26a1\ufe0f Matrix Slash Commands Reference",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L128",
+      "_origin": "ast",
+      "id": "readme_matrix_slash_commands_reference",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "\u26a1\ufe0f matrix slash commands reference"
+    },
+    {
+      "label": "Overview",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "readme_overview",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "overview"
+    },
+    {
+      "label": "Quickstart Guide (New Machine Setup)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L157",
+      "_origin": "ast",
+      "id": "readme_quickstart_guide_new_machine_setup",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "quickstart guide (new machine setup)"
+    },
+    {
+      "label": "Repository Structure",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "readme_repository_structure",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "repository structure"
+    },
+    {
+      "label": "\ufe0f Security & Privacy Guarantee",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L224",
+      "_origin": "ast",
+      "id": "readme_security_privacy_guarantee",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "\ufe0f security & privacy guarantee"
+    },
+    {
+      "label": "Step 1: Clone the Repository",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L159",
+      "_origin": "ast",
+      "id": "readme_step_1_clone_the_repository",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "step 1: clone the repository"
+    },
+    {
+      "label": "Step 2: Install Web Tools MCP Dependencies",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L165",
+      "_origin": "ast",
+      "id": "readme_step_2_install_web_tools_mcp_dependencies",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "step 2: install web tools mcp dependencies"
+    },
+    {
+      "label": "Step 3: Configure and Start the Matrix Bridge",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L173",
+      "_origin": "ast",
+      "id": "readme_step_3_configure_and_start_the_matrix_bridge",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "step 3: configure and start the matrix bridge"
+    },
+    {
+      "label": "\ufe0f System Architecture",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "readme_system_architecture",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "\ufe0f system architecture"
+    },
+    {
+      "label": "Web Tools (`mcp-servers/web-tools/.env`)",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L204",
+      "_origin": "ast",
+      "id": "readme_web_tools_mcp_servers_web_tools_env",
+      "community": 2,
+      "community_name": "\u26a1\ufe0f Antigravity Nexus",
+      "norm_label": "web tools (`mcp-servers/web-tools/.env`)"
     },
     {
       "label": "Checks if a user is authorized to interact with Antigravity.",
@@ -712,10 +943,21 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L43",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_43",
       "community": 3,
-      "norm_label": "checks if a user is authorized to interact with antigravity.",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_rationale_43"
+      "norm_label": "checks if a user is authorized to interact with antigravity."
+    },
+    {
+      "label": "Automatically join room when invited by an authorized user.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L569",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_569",
+      "community": 3,
+      "community_name": "image_handler",
+      "norm_label": "automatically join room when invited by an authorized user."
     },
     {
       "label": "Downloads & decrypts Matrix media from homeserver.",
@@ -723,10 +965,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L589",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_589",
       "community": 3,
-      "norm_label": "downloads & decrypts matrix media from homeserver.",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_rationale_589"
+      "norm_label": "downloads & decrypts matrix media from homeserver."
     },
     {
       "label": "Handles image and encrypted image upload events.",
@@ -734,10 +976,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L757",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_757",
       "community": 3,
-      "norm_label": "handles image and encrypted image upload events.",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_rationale_757"
+      "norm_label": "handles image and encrypted image upload events."
     },
     {
       "label": "Handles SAS Emoji and Cross-Signing Key Verification from authorized users.",
@@ -745,10 +987,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L908",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_908",
       "community": 3,
-      "norm_label": "handles sas emoji and cross-signing key verification from authorized users.",
       "community_name": "image_handler",
-      "id": "matrix_matrix_antigravity_bridge_rationale_908"
+      "norm_label": "handles sas emoji and cross-signing key verification from authorized users."
     },
     {
       "label": "index.mjs",
@@ -817,37 +1059,147 @@
       "id": "mcp_servers_web_tools_src_index_transport"
     },
     {
-      "label": "Converts Markdown to clean Matrix-compatible HTML with tables support.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L331",
+      "label": "matrix/README.md",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L1",
       "_origin": "ast",
+      "id": "matrix_readme",
       "community": 5,
-      "norm_label": "converts markdown to clean matrix-compatible html with tables support.",
-      "community_name": "on_invite_callback",
-      "id": "matrix_matrix_antigravity_bridge_rationale_331"
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "matrix/readme.md"
     },
     {
-      "label": "Sends a rich HTML formatted message to Matrix.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L338",
+      "label": "1. Configuration",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L45",
       "_origin": "ast",
+      "id": "matrix_readme_1_configuration",
       "community": 5,
-      "norm_label": "sends a rich html formatted message to matrix.",
-      "community_name": "on_invite_callback",
-      "id": "matrix_matrix_antigravity_bridge_rationale_338"
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "1. configuration"
     },
     {
-      "label": "Automatically join room when invited by an authorized user.",
-      "file_type": "rationale",
-      "source_file": "matrix/matrix_antigravity_bridge.py",
-      "source_location": "L569",
+      "label": "2. 1-Click Automated Installation",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L69",
       "_origin": "ast",
+      "id": "matrix_readme_2_1_click_automated_installation",
       "community": 5,
-      "norm_label": "automatically join room when invited by an authorized user.",
-      "community_name": "on_invite_callback",
-      "id": "matrix_matrix_antigravity_bridge_rationale_569"
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "2. 1-click automated installation"
+    },
+    {
+      "label": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "matrix_readme_antigravity_matrix_bridge",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "\u26a1\ufe0f antigravity matrix bridge"
+    },
+    {
+      "label": "\u2699\ufe0f Background Daemon (systemd)",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "matrix_readme_background_daemon_systemd",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "\u2699\ufe0f background daemon (systemd)"
+    },
+    {
+      "label": "\ud83d\udcc2 Directory Layout",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L134",
+      "_origin": "ast",
+      "id": "matrix_readme_directory_layout",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "\ud83d\udcc2 directory layout"
+    },
+    {
+      "label": "\u2728 Key Features",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "matrix_readme_key_features",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "\u2728 key features"
+    },
+    {
+      "label": "Managing the Service",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L126",
+      "_origin": "ast",
+      "id": "matrix_readme_managing_the_service",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "managing the service"
+    },
+    {
+      "label": "\ud83d\udee0\ufe0f Manual Setup",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "matrix_readme_manual_setup",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "\ud83d\udee0\ufe0f manual setup"
+    },
+    {
+      "label": "Prerequisites",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L41",
+      "_origin": "ast",
+      "id": "matrix_readme_prerequisites",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "prerequisites"
+    },
+    {
+      "label": "\ud83d\ude80 Quick Setup",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "matrix_readme_quick_setup",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "\ud83d\ude80 quick setup"
+    },
+    {
+      "label": "\u26a1\ufe0f Supported Slash Commands",
+      "file_type": "document",
+      "source_file": "matrix/README.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "matrix_readme_supported_slash_commands",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "\u26a1\ufe0f supported slash commands"
+    },
+    {
+      "label": "README.md",
+      "file_type": "document",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "readme",
+      "community": 5,
+      "community_name": "\u26a1\ufe0f Antigravity Matrix Bridge",
+      "norm_label": "readme.md"
     },
     {
       "label": "on_message_event",
@@ -855,10 +1207,32 @@
       "source_file": "",
       "source_location": "",
       "_origin": "ast",
+      "id": "on_message_event",
       "community": 6,
-      "norm_label": "on_message_event",
       "community_name": "process_user_prompt",
-      "id": "on_message_event"
+      "norm_label": "on_message_event"
+    },
+    {
+      "label": "Converts Markdown to clean Matrix-compatible HTML with tables support.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L331",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_331",
+      "community": 6,
+      "community_name": "process_user_prompt",
+      "norm_label": "converts markdown to clean matrix-compatible html with tables support."
+    },
+    {
+      "label": "Sends a rich HTML formatted message to Matrix.",
+      "file_type": "rationale",
+      "source_file": "matrix/matrix_antigravity_bridge.py",
+      "source_location": "L338",
+      "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_338",
+      "community": 6,
+      "community_name": "process_user_prompt",
+      "norm_label": "sends a rich html formatted message to matrix."
     },
     {
       "label": "Sends a reaction emoji to a specific event.",
@@ -866,10 +1240,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L427",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_427",
       "community": 6,
-      "norm_label": "sends a reaction emoji to a specific event.",
       "community_name": "process_user_prompt",
-      "id": "matrix_matrix_antigravity_bridge_rationale_427"
+      "norm_label": "sends a reaction emoji to a specific event."
     },
     {
       "label": "Executes prompt via agy with full conversation and image attachment context.",
@@ -877,10 +1251,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L662",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_662",
       "community": 6,
-      "norm_label": "executes prompt via agy with full conversation and image attachment context.",
       "community_name": "process_user_prompt",
-      "id": "matrix_matrix_antigravity_bridge_rationale_662"
+      "norm_label": "executes prompt via agy with full conversation and image attachment context."
     },
     {
       "label": "Handles regular text message events.",
@@ -888,10 +1262,10 @@
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L794",
       "_origin": "ast",
+      "id": "matrix_matrix_antigravity_bridge_rationale_794",
       "community": 6,
-      "norm_label": "handles regular text message events.",
       "community_name": "process_user_prompt",
-      "id": "matrix_matrix_antigravity_bridge_rationale_794"
+      "norm_label": "handles regular text message events."
     },
     {
       "label": "node",
@@ -902,10 +1276,10 @@
         "mcp_kind": "mcp_command"
       },
       "_origin": "ast",
+      "id": "mcp_command_node",
       "community": 7,
-      "norm_label": "node",
       "community_name": "web-tools",
-      "id": "mcp_command_node"
+      "norm_label": "node"
     },
     {
       "label": "mcp.json",
@@ -916,10 +1290,10 @@
         "mcp_kind": "mcp_config_file"
       },
       "_origin": "ast",
+      "id": "omp_mcp",
       "community": 7,
-      "norm_label": "mcp.json",
       "community_name": "web-tools",
-      "id": "omp_mcp"
+      "norm_label": "mcp.json"
     },
     {
       "label": "web-tools",
@@ -930,10 +1304,10 @@
         "mcp_kind": "mcp_server"
       },
       "_origin": "ast",
+      "id": "omp_mcp_mcp_server_web_tools",
       "community": 7,
-      "norm_label": "web-tools",
       "community_name": "web-tools",
-      "id": "omp_mcp_mcp_server_web_tools"
+      "norm_label": "web-tools"
     },
     {
       "label": "run_bridge.sh",
@@ -1005,9 +1379,9 @@
       "source_location": "L246",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_custom_login",
-      "target": "matrix_matrix_antigravity_bridge_auto_cross_sign_self"
+      "target": "matrix_matrix_antigravity_bridge_auto_cross_sign_self",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1017,9 +1391,9 @@
       "source_location": "L367",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_get_usage_quota",
-      "target": "matrix_matrix_antigravity_bridge_run_agy"
+      "target": "matrix_matrix_antigravity_bridge_run_agy",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1029,9 +1403,9 @@
       "source_location": "L387",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_get_usage_quota",
-      "target": "matrix_matrix_antigravity_bridge_format_progress_bar"
+      "target": "matrix_matrix_antigravity_bridge_format_progress_bar",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1041,9 +1415,9 @@
       "source_location": "L504",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_handle_command",
-      "target": "matrix_matrix_antigravity_bridge_get_usage_quota"
+      "target": "matrix_matrix_antigravity_bridge_get_usage_quota",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1053,9 +1427,9 @@
       "source_location": "L529",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_handle_command",
-      "target": "matrix_matrix_antigravity_bridge_list_skills"
+      "target": "matrix_matrix_antigravity_bridge_list_skills",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1065,9 +1439,9 @@
       "source_location": "L532",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_handle_command",
-      "target": "matrix_matrix_antigravity_bridge_list_mcp"
+      "target": "matrix_matrix_antigravity_bridge_list_mcp",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1077,9 +1451,9 @@
       "source_location": "L760",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_image_handler",
-      "target": "matrix_matrix_antigravity_bridge_is_user_allowed"
+      "target": "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1089,9 +1463,9 @@
       "source_location": "L764",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_image_handler",
-      "target": "matrix_matrix_antigravity_bridge_download_matrix_media"
+      "target": "matrix_matrix_antigravity_bridge_download_matrix_media",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1101,9 +1475,9 @@
       "source_location": "L785",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_image_handler",
-      "target": "matrix_matrix_antigravity_bridge_process_user_prompt"
+      "target": "matrix_matrix_antigravity_bridge_process_user_prompt",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1113,9 +1487,9 @@
       "source_location": "L802",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_message_handler",
-      "target": "matrix_matrix_antigravity_bridge_is_user_allowed"
+      "target": "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1125,9 +1499,9 @@
       "source_location": "L825",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_message_handler",
-      "target": "matrix_matrix_antigravity_bridge_process_user_prompt"
+      "target": "matrix_matrix_antigravity_bridge_process_user_prompt",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1137,9 +1511,9 @@
       "source_location": "L573",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_on_invite_callback",
-      "target": "matrix_matrix_antigravity_bridge_is_user_allowed"
+      "target": "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1149,9 +1523,9 @@
       "source_location": "L582",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_on_invite_callback",
-      "target": "matrix_matrix_antigravity_bridge_send_formatted_message"
+      "target": "matrix_matrix_antigravity_bridge_send_formatted_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1161,9 +1535,9 @@
       "source_location": "L858",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_patched_check_commitment",
-      "target": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256"
+      "target": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1173,9 +1547,9 @@
       "source_location": "L849",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_patched_from_key_verification_start",
-      "target": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256"
+      "target": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1185,9 +1559,9 @@
       "source_location": "L669",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_process_user_prompt",
-      "target": "matrix_matrix_antigravity_bridge_handle_command"
+      "target": "matrix_matrix_antigravity_bridge_handle_command",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1197,9 +1571,9 @@
       "source_location": "L670",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_process_user_prompt",
-      "target": "matrix_matrix_antigravity_bridge_send_formatted_message"
+      "target": "matrix_matrix_antigravity_bridge_send_formatted_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1209,9 +1583,9 @@
       "source_location": "L694",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_process_user_prompt",
-      "target": "matrix_matrix_antigravity_bridge_send_reaction"
+      "target": "matrix_matrix_antigravity_bridge_send_reaction",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1221,9 +1595,9 @@
       "source_location": "L733",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_process_user_prompt",
-      "target": "matrix_matrix_antigravity_bridge_run_agy"
+      "target": "matrix_matrix_antigravity_bridge_run_agy",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1233,9 +1607,9 @@
       "source_location": "L340",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_send_formatted_message",
-      "target": "matrix_matrix_antigravity_bridge_render_markdown_to_html"
+      "target": "matrix_matrix_antigravity_bridge_render_markdown_to_html",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1245,9 +1619,9 @@
       "source_location": "L915",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_to_device_callback",
-      "target": "matrix_matrix_antigravity_bridge_is_user_allowed"
+      "target": "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -1281,9 +1655,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_message_handler",
-      "target": "on_message_event"
+      "target": "on_message_event",
+      "confidence_score": 1.0
     },
     {
       "relation": "references",
@@ -1293,9 +1667,9 @@
       "weight": 1.0,
       "context": "decorator",
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_patched_client_join",
-      "target": "logged_in_async"
+      "target": "logged_in_async",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -1329,9 +1703,9 @@
       "source_location": "L18",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "dotenv"
+      "target": "dotenv",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1340,9 +1714,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "agents_rules_graphify",
-      "target": "agents_rules_graphify_graphify",
-      "confidence_score": 1.0
+      "target": "agents_rules_graphify_graphify"
     },
     {
       "relation": "contains",
@@ -1351,9 +1725,9 @@
       "source_location": "L6",
       "weight": 1.0,
       "_origin": "ast",
+      "confidence_score": 1.0,
       "source": "agents_workflows_graphify",
-      "target": "agents_workflows_graphify_workflow_graphify",
-      "confidence_score": 1.0
+      "target": "agents_workflows_graphify_workflow_graphify"
     },
     {
       "relation": "contains",
@@ -1362,9 +1736,9 @@
       "source_location": "L1031",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_main"
+      "target": "matrix_matrix_antigravity_bridge_main",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1373,9 +1747,9 @@
       "source_location": "L280",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_list_skills"
+      "target": "matrix_matrix_antigravity_bridge_list_skills",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1384,9 +1758,9 @@
       "source_location": "L301",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_list_mcp"
+      "target": "matrix_matrix_antigravity_bridge_list_mcp",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1395,9 +1769,9 @@
       "source_location": "L330",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_render_markdown_to_html"
+      "target": "matrix_matrix_antigravity_bridge_render_markdown_to_html",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1406,9 +1780,9 @@
       "source_location": "L337",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_send_formatted_message"
+      "target": "matrix_matrix_antigravity_bridge_send_formatted_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1417,9 +1791,9 @@
       "source_location": "L360",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_format_progress_bar"
+      "target": "matrix_matrix_antigravity_bridge_format_progress_bar",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1428,9 +1802,9 @@
       "source_location": "L365",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_get_usage_quota"
+      "target": "matrix_matrix_antigravity_bridge_get_usage_quota",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1439,9 +1813,9 @@
       "source_location": "L393",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_run_agy"
+      "target": "matrix_matrix_antigravity_bridge_run_agy",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1450,9 +1824,9 @@
       "source_location": "L42",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_is_user_allowed"
+      "target": "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1461,9 +1835,9 @@
       "source_location": "L426",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_send_reaction"
+      "target": "matrix_matrix_antigravity_bridge_send_reaction",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1472,9 +1846,9 @@
       "source_location": "L445",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_handle_command"
+      "target": "matrix_matrix_antigravity_bridge_handle_command",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1483,9 +1857,9 @@
       "source_location": "L56",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_find_agy_bin"
+      "target": "matrix_matrix_antigravity_bridge_find_agy_bin",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1494,9 +1868,9 @@
       "source_location": "L568",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_on_invite_callback"
+      "target": "matrix_matrix_antigravity_bridge_on_invite_callback",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1505,9 +1879,9 @@
       "source_location": "L588",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_download_matrix_media"
+      "target": "matrix_matrix_antigravity_bridge_download_matrix_media",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1516,9 +1890,9 @@
       "source_location": "L661",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_process_user_prompt"
+      "target": "matrix_matrix_antigravity_bridge_process_user_prompt",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1527,9 +1901,9 @@
       "source_location": "L68",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_find_default_workspace"
+      "target": "matrix_matrix_antigravity_bridge_find_default_workspace",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1538,9 +1912,9 @@
       "source_location": "L756",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_image_handler"
+      "target": "matrix_matrix_antigravity_bridge_image_handler",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1549,9 +1923,9 @@
       "source_location": "L793",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_message_handler"
+      "target": "matrix_matrix_antigravity_bridge_message_handler",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1560,9 +1934,9 @@
       "source_location": "L838",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256"
+      "target": "matrix_matrix_antigravity_bridge_unpadded_base64_sha256",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1571,9 +1945,9 @@
       "source_location": "L907",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_to_device_callback"
+      "target": "matrix_matrix_antigravity_bridge_to_device_callback",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1582,9 +1956,130 @@
       "source_location": "L91",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_auto_cross_sign_self"
+      "target": "matrix_matrix_antigravity_bridge_auto_cross_sign_self",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme",
+      "target": "matrix_readme_antigravity_matrix_bridge",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_antigravity_matrix_bridge",
+      "target": "matrix_readme_directory_layout",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_antigravity_matrix_bridge",
+      "target": "matrix_readme_supported_slash_commands",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_antigravity_matrix_bridge",
+      "target": "matrix_readme_quick_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_antigravity_matrix_bridge",
+      "target": "matrix_readme_key_features",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L78",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_antigravity_matrix_bridge",
+      "target": "matrix_readme_manual_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_antigravity_matrix_bridge",
+      "target": "matrix_readme_background_daemon_systemd",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L126",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_background_daemon_systemd",
+      "target": "matrix_readme_managing_the_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L41",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_quick_setup",
+      "target": "matrix_readme_prerequisites",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_quick_setup",
+      "target": "matrix_readme_1_configuration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "matrix/README.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "matrix_readme_quick_setup",
+      "target": "matrix_readme_2_1_click_automated_installation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -1840,15 +2335,246 @@
       "target": "omp_mcp_mcp_server_web_tools"
     },
     {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "readme_antigravity_nexus",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_1_matrix_e2ee_chat_bridge_matrix",
+      "target": "readme_matrix_slash_commands_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L103",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_dedicated_documentation_index",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L114",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_core_features_modules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L157",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_quickstart_guide_new_machine_setup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L185",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_environment_variables_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L213",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_deploying_the_cloudflare_worker_proxy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L224",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_security_privacy_guarantee",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L232",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_author_maintainer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L238",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_license",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_system_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_autonomous_ai_agent_workspace_ecosystem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_antigravity_nexus",
+      "target": "readme_repository_structure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_core_features_modules",
+      "target": "readme_1_matrix_e2ee_chat_bridge_matrix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L145",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_core_features_modules",
+      "target": "readme_2_web_tools_mcp_server_mcp_servers_web_tools",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_environment_variables_summary",
+      "target": "readme_matrix_bridge_matrix_env",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_environment_variables_summary",
+      "target": "readme_web_tools_mcp_servers_web_tools_env",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L159",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_quickstart_guide_new_machine_setup",
+      "target": "readme_step_1_clone_the_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L165",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_quickstart_guide_new_machine_setup",
+      "target": "readme_step_2_install_web_tools_mcp_dependencies",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L173",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme_quickstart_guide_new_machine_setup",
+      "target": "readme_step_3_configure_and_start_the_matrix_bridge",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "matrix/matrix_antigravity_bridge.py",
       "source_location": "L281",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_281",
-      "target": "matrix_matrix_antigravity_bridge_list_skills"
+      "target": "matrix_matrix_antigravity_bridge_list_skills",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1857,9 +2583,9 @@
       "source_location": "L302",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_302",
-      "target": "matrix_matrix_antigravity_bridge_list_mcp"
+      "target": "matrix_matrix_antigravity_bridge_list_mcp",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1868,9 +2594,9 @@
       "source_location": "L331",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_331",
-      "target": "matrix_matrix_antigravity_bridge_render_markdown_to_html"
+      "target": "matrix_matrix_antigravity_bridge_render_markdown_to_html",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1879,9 +2605,9 @@
       "source_location": "L338",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_338",
-      "target": "matrix_matrix_antigravity_bridge_send_formatted_message"
+      "target": "matrix_matrix_antigravity_bridge_send_formatted_message",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1890,9 +2616,9 @@
       "source_location": "L366",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_366",
-      "target": "matrix_matrix_antigravity_bridge_get_usage_quota"
+      "target": "matrix_matrix_antigravity_bridge_get_usage_quota",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1901,9 +2627,9 @@
       "source_location": "L394",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_394",
-      "target": "matrix_matrix_antigravity_bridge_run_agy"
+      "target": "matrix_matrix_antigravity_bridge_run_agy",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1912,9 +2638,9 @@
       "source_location": "L427",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_427",
-      "target": "matrix_matrix_antigravity_bridge_send_reaction"
+      "target": "matrix_matrix_antigravity_bridge_send_reaction",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1923,9 +2649,9 @@
       "source_location": "L43",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_43",
-      "target": "matrix_matrix_antigravity_bridge_is_user_allowed"
+      "target": "matrix_matrix_antigravity_bridge_is_user_allowed",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1934,9 +2660,9 @@
       "source_location": "L446",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_446",
-      "target": "matrix_matrix_antigravity_bridge_handle_command"
+      "target": "matrix_matrix_antigravity_bridge_handle_command",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1945,9 +2671,9 @@
       "source_location": "L569",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_569",
-      "target": "matrix_matrix_antigravity_bridge_on_invite_callback"
+      "target": "matrix_matrix_antigravity_bridge_on_invite_callback",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1956,9 +2682,9 @@
       "source_location": "L57",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_57",
-      "target": "matrix_matrix_antigravity_bridge_find_agy_bin"
+      "target": "matrix_matrix_antigravity_bridge_find_agy_bin",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1967,9 +2693,9 @@
       "source_location": "L589",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_589",
-      "target": "matrix_matrix_antigravity_bridge_download_matrix_media"
+      "target": "matrix_matrix_antigravity_bridge_download_matrix_media",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1978,9 +2704,9 @@
       "source_location": "L662",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_662",
-      "target": "matrix_matrix_antigravity_bridge_process_user_prompt"
+      "target": "matrix_matrix_antigravity_bridge_process_user_prompt",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -1989,9 +2715,9 @@
       "source_location": "L69",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_69",
-      "target": "matrix_matrix_antigravity_bridge_find_default_workspace"
+      "target": "matrix_matrix_antigravity_bridge_find_default_workspace",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -2000,9 +2726,9 @@
       "source_location": "L757",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_757",
-      "target": "matrix_matrix_antigravity_bridge_image_handler"
+      "target": "matrix_matrix_antigravity_bridge_image_handler",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -2011,9 +2737,9 @@
       "source_location": "L794",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_794",
-      "target": "matrix_matrix_antigravity_bridge_message_handler"
+      "target": "matrix_matrix_antigravity_bridge_message_handler",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -2022,9 +2748,9 @@
       "source_location": "L908",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_908",
-      "target": "matrix_matrix_antigravity_bridge_to_device_callback"
+      "target": "matrix_matrix_antigravity_bridge_to_device_callback",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -2033,9 +2759,20 @@
       "source_location": "L92",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 1.0,
       "source": "matrix_matrix_antigravity_bridge_rationale_92",
-      "target": "matrix_matrix_antigravity_bridge_auto_cross_sign_self"
+      "target": "matrix_matrix_antigravity_bridge_auto_cross_sign_self",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "source_file": "README.md",
+      "source_location": "L109",
+      "weight": 1.0,
+      "_origin": "ast",
+      "source": "readme",
+      "target": "matrix_readme",
+      "confidence_score": 1.0
     },
     {
       "relation": "indirect_call",
@@ -2045,9 +2782,9 @@
       "source_location": "L1013",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge_custom_setup_callbacks",
-      "target": "matrix_matrix_antigravity_bridge_to_device_callback"
+      "target": "matrix_matrix_antigravity_bridge_to_device_callback",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2057,9 +2794,9 @@
       "weight": 1.0,
       "_origin": "ast",
       "context": "assignment",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_custom_setup_callbacks"
+      "target": "matrix_matrix_antigravity_bridge_custom_setup_callbacks",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2069,9 +2806,9 @@
       "weight": 1.0,
       "_origin": "ast",
       "context": "assignment",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_custom_login"
+      "target": "matrix_matrix_antigravity_bridge_custom_login",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2081,9 +2818,9 @@
       "weight": 1.0,
       "_origin": "ast",
       "context": "assignment",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_patched_client_join"
+      "target": "matrix_matrix_antigravity_bridge_patched_client_join",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2093,9 +2830,9 @@
       "weight": 1.0,
       "_origin": "ast",
       "context": "assignment",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_patched_from_key_verification_start"
+      "target": "matrix_matrix_antigravity_bridge_patched_from_key_verification_start",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2105,9 +2842,9 @@
       "weight": 1.0,
       "_origin": "ast",
       "context": "assignment",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_patched_check_commitment"
+      "target": "matrix_matrix_antigravity_bridge_patched_check_commitment",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2117,9 +2854,9 @@
       "weight": 1.0,
       "_origin": "ast",
       "context": "assignment",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_patched_generate_emoji"
+      "target": "matrix_matrix_antigravity_bridge_patched_generate_emoji",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2129,9 +2866,9 @@
       "weight": 1.0,
       "_origin": "ast",
       "context": "assignment",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge",
-      "target": "matrix_matrix_antigravity_bridge_patched_receive_mac_event"
+      "target": "matrix_matrix_antigravity_bridge_patched_receive_mac_event",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2141,9 +2878,9 @@
       "source_location": "L1035",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge_main",
-      "target": "matrix_matrix_antigravity_bridge_on_invite_callback"
+      "target": "matrix_matrix_antigravity_bridge_on_invite_callback",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2153,9 +2890,9 @@
       "source_location": "L1036",
       "weight": 1.0,
       "_origin": "ast",
-      "confidence_score": 0.5,
       "source": "matrix_matrix_antigravity_bridge_main",
-      "target": "matrix_matrix_antigravity_bridge_image_handler"
+      "target": "matrix_matrix_antigravity_bridge_image_handler",
+      "confidence_score": 0.5
     },
     {
       "relation": "indirect_call",
@@ -2171,5 +2908,5 @@
     }
   ],
   "hyperedges": [],
-  "built_at_commit": "968d27dfbcd7a4d089f70ae20d3b4c6800efc630"
+  "built_at_commit": "e0a71caab8595c9ff1e8958c8decec7f55d196a5"
 }
