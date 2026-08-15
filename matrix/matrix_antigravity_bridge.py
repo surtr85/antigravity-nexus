@@ -35,7 +35,7 @@ USERNAME = os.environ.get("MATRIX_USERNAME", "")
 PASSWORD = os.environ.get("MATRIX_PASSWORD", "")
 RECOVERY_KEY = os.environ.get("MATRIX_RECOVERY_KEY", "").strip()
 
-# Access Control: Authorized Matrix User IDs (comma-separated, e.g. @amadeus:matrix.surtr.ir)
+# Access Control: Authorized Matrix User IDs (comma-separated, e.g. @your_username:matrix.example.com)
 ALLOWED_USERS_RAW = os.environ.get("MATRIX_ALLOWED_USERS", "")
 ALLOWED_USERS = set(u.strip() for u in ALLOWED_USERS_RAW.split(",") if u.strip())
 

@@ -3,7 +3,7 @@
   "mcpServers": {
     "web-tools": {
       "command": "node",
-      "args": ["/home/amadeus/Projects/antigravity-nexus/mcp-servers/web-tools/src/index.mjs"]
+      "args": ["mcp-servers/web-tools/src/index.mjs"]
     }
   }
 }

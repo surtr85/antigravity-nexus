@@ -52,18 +52,18 @@ nano .env
 Example `.env` configuration:
 ```env
 # Matrix Homeserver & Bot Credentials
-MATRIX_HOMESERVER=https://matrix.surtr.ir
-MATRIX_USERNAME=antigravity
+MATRIX_HOMESERVER=https://matrix.example.com
+MATRIX_USERNAME=your_bot_username
 MATRIX_PASSWORD=your_secure_password
 
 # Access Control: Comma-separated list of authorized Matrix User IDs
-MATRIX_ALLOWED_USERS=@amadeus:matrix.surtr.ir
+MATRIX_ALLOWED_USERS=@your_username:matrix.example.com
 
 # Matrix Recovery Key for E2EE Key Backup & Secure Secret Storage (SSSS)
-MATRIX_RECOVERY_KEY="EsTc jETz kP1Y 5Xcm NDs3 Gvp3 HkgQ SHz7 FPLJ x5D7 5z6S mv6y"
+MATRIX_RECOVERY_KEY="EsTc xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx xxxx"
 
 # Optional: Path to custom agy binary
-AGY_BIN=/home/amadeus/.local/bin/agy
+AGY_BIN=/path/to/agy
 ```
 
 ### 2. 1-Click Automated Installation

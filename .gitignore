@@ -45,8 +45,9 @@ Thumbs.db
 **/.obsidian/backups/
 
 
-# Graphify cache & vault outputs
+# Graphify cache, vault outputs & machine-specific roots
 graphify-out/cache/
 graphify-out/obsidian/
+graphify-out/.graphify_root
 # Jujutsu VCS
 .jj/
